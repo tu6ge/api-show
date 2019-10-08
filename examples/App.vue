@@ -1,24 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
     <hello></hello>
+    <php></php>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import hello from '../packages/index'
-const lib = require("../packages/index");
-console.log(lib)
+import {hello} from '../packages/index'
+const lib = require("../packages/index")
 
-Vue.use(hello)
+
+Vue.use(lib.php)
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    [hello.name]:hello
   }
 }
 </script>
