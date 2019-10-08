@@ -9,10 +9,14 @@
 <script>
 import Vue from 'vue'
 import {hello} from '../packages/index'
-const lib = require("../packages/index")
+console.log(hello)
+// const lib = require("../packages/index")
 
 
-Vue.use(lib.php)
+// Vue.use(lib.php)
+// import apishow from "../packages/index"
+// console.log(apishow)
+// Vue.use(apishow)
 
 export default {
   name: 'app',
