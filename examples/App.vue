@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <ali-57002003-011807 :data="ali_57002003_011807"></ali-57002003-011807>
     <hello></hello>
     <php></php>
   </div>
@@ -8,20 +9,37 @@
 
 <script>
 import Vue from 'vue'
-import {hello} from '../packages/index'
-console.log(hello)
-// const lib = require("../packages/index")
-
-
-// Vue.use(lib.php)
-// import apishow from "../packages/index"
-// console.log(apishow)
-// Vue.use(apishow)
+import apishow from "../packages/index"
+Vue.use(apishow)
 
 export default {
   name: 'app',
-  components: {
-    [hello.name]:hello
+  data(){
+      return {
+          ali_57002003_011807:{
+                "status": "0",
+                "msg": "ok",
+                "result": {
+                    "tvid": "435",
+                    "name": "CCTV-3（综艺）",
+                    "date": "2015-08-09",
+                    "program": [
+                        {
+                            "name": "综艺喜乐汇",
+                            "starttime": "01:18"
+                        },
+                        {
+                            "name": "综艺喜乐汇",
+                            "starttime": "02:36"
+                        },
+                        {
+                            "name": "2014中国梦-我梦最美",
+                            "starttime": "03:55"
+                        }
+                    ]
+                }
+            }
+      }
   }
 }
 </script>
@@ -31,8 +49,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
   margin-top: 60px;
 }
 </style>

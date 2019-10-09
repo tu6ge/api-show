@@ -1,9 +1,14 @@
-// 导入颜色选择器组件
+import ali_57002003_011807 from './ali_57002003_011807'
 import hello from './hello'
 import php from './php'
 
+import 'element-ui/lib/theme-chalk/index.css';
+//import 'vant/lib/cell/style'
+import 'iview/dist/styles/iview.css';
+
 // 存储组件列表
 const components = [
+    ali_57002003_011807,
   hello,
   php
 ]
@@ -25,6 +30,7 @@ const apishow = install
 export {
     apishow,
     // 以下是具体的组件列表
+    ali_57002003_011807,
     hello,
     php,
 }
