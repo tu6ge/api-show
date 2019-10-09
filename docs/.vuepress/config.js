@@ -1,13 +1,12 @@
 module.exports = {
-    title:"api show说明文档",
+    title:"api show",
     themeConfig: {
         nav: [
-          { text: 'Home', link: '/' },
-          { text: 'Guide', link: '/guide/' },
-          { text: 'Github', link: 'https://github.com/tu6ge/api-show' },
+          { text: '首页', link: '/' },
+          { text: '指南', link: '/guide/' },
         ],
         sidebar: [
-            '/',
+            '/guide/',
             { 
                 title:'分组一',
                 children:[
