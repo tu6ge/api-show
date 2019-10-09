@@ -1,3 +1,4 @@
+//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     // 修改 src 为 examples
   pages: {
@@ -7,6 +8,11 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  // configureWebpack: {
+  //   plugins: [
+  //     new MiniCssExtractPlugin()
+  //   ]
+  // },
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
     config.module
