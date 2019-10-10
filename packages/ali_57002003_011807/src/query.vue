@@ -1,5 +1,6 @@
 <template>
     <div >
+        
         <Card style="width:350px">
         <p slot="title">
             {{data.result.name}}

@@ -12,6 +12,10 @@ import Vue from 'vue'
 import apishow from "../packages/index"
 Vue.use(apishow)
 
+if(module.hot){
+  module.hot.accept("../packages/index")
+}
+
 export default {
   name: 'app',
   data(){
