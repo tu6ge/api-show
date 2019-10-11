@@ -45,6 +45,9 @@ export default {
             }
         }
     },
+    // mounted(){
+    //     console.log(this.data)
+    // },
     components:{
         [TimelineItem.name]:TimelineItem,
         [Timeline.name]:Timeline,
