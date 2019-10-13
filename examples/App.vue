@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <ali-57002003-011807 :data="ali_57002003_011807"></ali-57002003-011807>
+    <aps-ali-011807 :data="ali_011807"></aps-ali-011807>
+     <aps-ali-011807-channel :data="ali_011807_channel"  @change="channel_change"></aps-ali-011807-channel>
     <hello></hello>
     <php></php>
   </div>
@@ -20,7 +21,7 @@ export default {
   name: 'app',
   data(){
       return {
-          ali_57002003_011807:{
+            ali_011807:{
                 "status": "0",
                 "msg": "ok",
                 "result": {
@@ -42,7 +43,42 @@ export default {
                         }
                     ]
                 }
+            },
+            ali_011807_channel:{
+                "status": "0",
+                "msg": "ok",
+                "result": [
+                    {
+                        "tvid": "1",
+                        "name": "中央台",
+                        "parentid": "0",
+                        "istv": "0"
+                    },
+                    {
+                        "tvid": "2381",
+                        "name": "中国美食",
+                        "parentid": "4",
+                        "istv": "1"
+                    },
+                    {
+                        "tvid": "2382",
+                        "name": "人文历史",
+                        "parentid": "4",
+                        "istv": "1"
+                    },
+                    {
+                        "tvid": "2383",
+                        "name": "中国旅游",
+                        "parentid": "4",
+                        "istv": "1"
+                    }
+                ]
             }
+      }
+  },
+  methods:{
+      channel_change(val){
+          console.log('change val :' + val)
       }
   }
 }

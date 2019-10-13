@@ -35,7 +35,7 @@ import {
 } from 'iview'
 
 export default {
-    name: "ali-57002003-011807",
+    name: "aps-ali-011807",
     props:{
         data:{
             type:  Object,

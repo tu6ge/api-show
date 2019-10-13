@@ -1,4 +1,5 @@
-import ali_57002003_011807 from './ali_57002003_011807'
+import ali_011807 from './ali_011807'
+import ali_011807_channel from './ali_011807_channel'
 import hello from './hello'
 import php from './php'
 
@@ -8,7 +9,8 @@ import 'iview/dist/styles/iview.css';
 
 // 存储组件列表
 const components = [
-    ali_57002003_011807,
+    ali_011807,
+    ali_011807_channel,
   hello,
   php
 ]
@@ -30,7 +32,8 @@ const apishow = install
 export {
     apishow,
     // 以下是具体的组件列表
-    ali_57002003_011807,
+    ali_011807,
+    ali_011807_channel,
     hello,
     php,
 }
