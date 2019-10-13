@@ -3,7 +3,7 @@ import ali_011807_channel from './ali_011807_channel'
 import hello from './hello'
 import php from './php'
 
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/index.css';
 //import 'vant/lib/cell/style'
 import 'iview/dist/styles/iview.css';
 

@@ -14,7 +14,7 @@ npm i -S api-show
 
 ```html 
 <!-- 引入样式 -->
- todo
+<link rel="stylesheet" href="https://unpkg.com/api-show/lib/apishow.css">
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/api-show/lib/apishow.umd.min.js"></script>
 ```
@@ -27,7 +27,7 @@ npm i -S api-show
 <head>
   <meta charset="UTF-8">
   <!-- import CSS -->
-
+<link rel="stylesheet" href="https://unpkg.com/api-show/lib/apishow.css">
 </head>
 <body>
   <div id="app">

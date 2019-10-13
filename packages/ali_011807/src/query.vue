@@ -22,7 +22,8 @@
 </template>
 <script>
 
-
+import 'element-ui/lib/theme-chalk/timeline.css';
+import 'element-ui/lib/theme-chalk/timeline-item.css';
 import {
     Timeline,
     TimelineItem
@@ -56,3 +57,6 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+</style>
