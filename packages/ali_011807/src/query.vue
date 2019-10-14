@@ -1,22 +1,19 @@
 <template>
     <div >
         
-        <Card style="width:350px">
-        <p slot="title">
-            {{data.result.name}}
-        </p>
-        <a href="#" slot="extra" >
-            {{data.result.date}}
-        </a>
-         <el-timeline >
-            <el-timeline-item
-            v-for="(program, index) in data.result.program"
-            :key="index"
-            :timestamp="program.starttime">
-            {{program.name}}
-            </el-timeline-item>
-        </el-timeline>
-    </Card>
+        <a-card :title="data.result.name" style="width: 300px">
+            <a href="#" slot="extra" >
+                {{data.result.date}}
+            </a>
+            <el-timeline >
+                <el-timeline-item
+                v-for="(program, index) in data.result.program"
+                :key="index"
+                :timestamp="program.starttime">
+                {{program.name}}
+                </el-timeline-item>
+            </el-timeline>
+        </a-card>
         
     </div>
 </template>
@@ -24,16 +21,14 @@
 
 import 'element-ui/lib/theme-chalk/timeline.css';
 import 'element-ui/lib/theme-chalk/timeline-item.css';
+import 'ant-design-vue/lib/card/style/css'
 import {
     Timeline,
     TimelineItem
 } from 'element-ui'
-// import{
-//     Cell
-// } from 'vant'
 import {
     Card
-} from 'iview'
+} from 'ant-design-vue'
 
 export default {
     name: "aps-ali-011807",
@@ -52,7 +47,6 @@ export default {
     components:{
         [TimelineItem.name]:TimelineItem,
         [Timeline.name]:Timeline,
-        //[Cell.name]:Cell,
         [Card.name]:Card,
     }
 }

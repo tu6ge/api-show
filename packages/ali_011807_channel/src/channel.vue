@@ -13,6 +13,8 @@ import {
     Select,
     Option,
 } from 'element-ui'
+import 'element-ui/lib/theme-chalk/select.css';
+import 'element-ui/lib/theme-chalk/option.css';
 export default {
     name: "aps-ali-011807-channel",
     props:{

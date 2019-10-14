@@ -9,6 +9,7 @@ module.exports = {
         sidebar: [
             '/guide/',
             '/guide/jisutvjmyg', //电视节目预告
+            '/guide/ipquery',       //ip地址归属地查询
             { 
                 title:'分组一',
                 children:[

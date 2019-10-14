@@ -10,14 +10,6 @@ module.exports = {
         "styleLibraryName": "theme-chalk"
       },
       'element-ui'
-    ],
-    [
-        "import", 
-        {
-            "libraryName": "view-design",
-            "libraryDirectory": "src/components"
-        },
-        'view-design'
     ]
   ]
 }

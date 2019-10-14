@@ -1,16 +1,16 @@
 import ali_011807 from './ali_011807'
 import ali_011807_channel from './ali_011807_channel'
+import ali_031829 from './ali_031829'
 import hello from './hello'
 import php from './php'
 
-// import 'element-ui/lib/theme-chalk/index.css';
-//import 'vant/lib/cell/style'
-import 'iview/dist/styles/iview.css';
+
 
 // 存储组件列表
 const components = [
     ali_011807,
     ali_011807_channel,
+    ali_031829,
   hello,
   php
 ]
@@ -34,6 +34,7 @@ export {
     // 以下是具体的组件列表
     ali_011807,
     ali_011807_channel,
+    ali_031829,
     hello,
     php,
 }
