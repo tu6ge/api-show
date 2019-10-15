@@ -166,8 +166,3 @@ export default{
     }
 }
 </script>
-<style>
-.mt-10{
-    margin-top:10px;
-}
-</style>

@@ -77,8 +77,8 @@ export default {
       }
   },
   methods:{
-      channel_change(val){
-          console.log('change val :' + val)
+      channel_change(){
+          //console.log('change val :' + val)
       }
   }
 }

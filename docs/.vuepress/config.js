@@ -10,6 +10,16 @@ module.exports = {
             '/guide/',
             '/guide/jisutvjmyg', //电视节目预告
             '/guide/ipquery',       //ip地址归属地查询
+            '/guide/shares',       //股票行情
+            '/guide/pdp-elite',       //性格分析
+            '/guide/ocr-businesslicense',       //营业执照图像识别
+            '/guide/ai-guidance-elite',       //AI智能导诊
+            '/guide/ai-driving-vehicle-license',       //驾驶证识别
+            '/guide/todayoil',       //今日油价
+            '/guide/gold',       //黄金价格查询
+            '/guide/finance-calendar',       //财经日历
+            '/guide/waihui',       //外汇牌价汇率
+            '/guide/bankcard',       //银行卡归属地查询
             { 
                 title:'分组一',
                 children:[

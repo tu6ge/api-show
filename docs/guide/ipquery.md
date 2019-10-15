@@ -71,8 +71,3 @@ export default {
 |show-isp | Boolean| false | 是否显示运营商| 
 |show-country | Boolean| false | 是否显示国家| 
 
-<style>
-.mt-10{
-    margin-top:10px;
-}
-</style>
