@@ -1,7 +1,7 @@
 
 module.exports = {
     title:"api show",
-    base:'/api-show.github.io/',
+    base:'/api-show/',
     themeConfig: {
         nav: [
           { text: '首页', link: '/' },
