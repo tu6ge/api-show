@@ -3,8 +3,6 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <aps-ali-011807 :data="ali_011807"></aps-ali-011807>
      <aps-ali-011807-channel :data="ali_011807_channel"  @change="channel_change"></aps-ali-011807-channel>
-    <hello></hello>
-    <php></php>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 
 module.exports = {
     title:"api show",
-    base:'/api-show/',
+    base: process.env.NODE_ENV === 'production'  ? '/api-show/':'/',
     themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -14,9 +14,9 @@ module.exports = {
                 title:'接口列表',
                 collapsable: false,
                 children:[
-                    ['/guide/jisutvjmyg','电视节目预告'], //电视节目预告
-                    '/guide/ipquery',       //ip地址归属地查询
-                    '/guide/shares',       //股票行情
+                    ['/guide/jisutvjmyg','电视节目预告'],                                   //电视节目预告
+                    '/guide/ipquery',                                                                           //ip地址归属地查询
+                    '/guide/shares',                                                                             //股票行情
                     '/guide/pdp-elite',       //性格分析
                     '/guide/ocr-businesslicense',       //营业执照图像识别
                     '/guide/ai-guidance-elite',       //AI智能导诊
@@ -26,6 +26,10 @@ module.exports = {
                     '/guide/finance-calendar',       //财经日历
                     '/guide/waihui',       //外汇牌价汇率
                     '/guide/bankcard',       //银行卡归属地查询
+                    '/guide/goexpress',       //全球快递查询
+                    '/guide/sz-sh-stock-history',       //沪深港股票历史行情
+                    '/guide/super_burn_child',       //母婴健康-智能预测
+                    '/guide/discern-plant',                                         //植物识别
                 ]
             }
             
