@@ -69,5 +69,4 @@ export default {
 |show-post-code | Boolean| false | 是否显示邮政编码| 
 |show-area-code | Boolean| false | 是否显示区号| 
 |show-isp | Boolean| false | 是否显示运营商| 
-|show-country | Boolean| false | 是否显示国家| 
 
