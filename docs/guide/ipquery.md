@@ -53,7 +53,9 @@ export default {
 ```
 2. 页面呈现
 ```html
-<!--默认只显示 省市区三项，本例加上了国家显示-->
+<!-- 默认只显示 省市区三项 -->
+ <aps-ali-031829  :data="query_data"  ></aps-ali-031829> 
+<!--如果要显示国家，可这样设置-->
  <aps-ali-031829  :data="query_data"  :show-country="true"></aps-ali-031829> 
 ```
 
