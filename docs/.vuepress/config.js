@@ -10,11 +10,13 @@ module.exports = {
         sidebarDepth:1,
         
         sidebar: [
-            '/guide/',{
+            '/guide/',
+            '/guide/quickstart',                                   //快速上手
+            {
                 title:'接口列表',
                 collapsable: false,
                 children:[
-                    ['/guide/jisutvjmyg','电视节目预告'],                                   //电视节目预告
+                    '/guide/jisutvjmyg',                                   //电视节目预告
                     '/guide/ipquery',                                                                           //ip地址归属地查询
                     '/guide/shares',                                                                             //股票行情
                     '/guide/pdp-elite',       //性格分析

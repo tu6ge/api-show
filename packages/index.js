@@ -1,13 +1,15 @@
+import ali_010845 from './ali_010845'
 import ali_011807 from './ali_011807'
-import ali_011807_channel from './ali_011807_channel'
 import ali_031829 from './ali_031829'
 
 
 
 // 存储组件列表
 const components = [
+    ali_010845,
+    ali_010845.kline,
     ali_011807,
-    ali_011807_channel,
+    ali_011807.channel,
     ali_031829,
 ]
 
@@ -28,8 +30,8 @@ const apishow = install
 export {
     apishow,
     // 以下是具体的组件列表
+    ali_010845,
     ali_011807,
-    ali_011807_channel,
     ali_031829,
 }
 export default {

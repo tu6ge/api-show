@@ -1,7 +1,11 @@
-import comp from './src/query.vue'
+import query from './src/query.vue'
+import channel from './channel.js'
 
-comp.install = function (Vue) {
-  Vue.component(comp.name, comp)
+query.channel = channel
+
+query.install = function (Vue) {
+  Vue.component(query.name, query)
+  Vue.component(channel.name, channel)
 }
 
-export default comp
+export default query

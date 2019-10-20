@@ -5,7 +5,7 @@
             <van-cell title="国家" :value="data.data.country"  v-if="showCountry"/>
             <van-cell title="省" :value="data.data.prov" />
             <van-cell title="市" :value="data.data.city" />
-            <van-cell title="区县" :value="data.data.area" />
+            <van-cell title="区/县" :value="data.data.area" />
             <van-cell title="邮政编码" :value="data.data.post_code"  v-if="showPostCode"/>
             <van-cell title="电话区号" :value="data.data.area_code" v-if="showAreaCode"/>
             <van-cell title="运营商" :value="data.data.isp" v-if="showIsp" />
