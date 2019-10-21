@@ -8,6 +8,9 @@ import ali_031829 from './ali_031829'
 const components = [
     ali_010845,
     ali_010845.kline,
+    ali_010845.market_history,
+    ali_010845.timeline,
+    ali_010845.index_timeline,
     ali_011807,
     ali_011807.channel,
     ali_031829,

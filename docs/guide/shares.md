@@ -116,6 +116,124 @@ kline_data:
   count: 232
   name: "上证指数"
   code: 000001
+market_history: 
+ showapi_res_code: 0
+ showapi_res_error: ""
+ showapi_res_body: 
+  ret_code: 0
+  month: 201702
+  list: 
+   - 
+    min_price: "3225.97"
+    trade_num: 1512443
+    trade_money: 186019288810
+    diff_money: "13.07"
+    close_price: "3241.73"
+    open_price: "3225.97"
+    max_price: "3242.68"
+    date: "2017-02-28"
+    diff_rate: "0.40"
+   - 
+    min_price: "3224.09"
+    trade_num: 1825810
+    trade_money: 211395715856
+    diff_money: "-24.77"
+    close_price: "3228.66"
+    open_price: "3249.19"
+    max_price: "3251.65"
+    date: "2017-02-27"
+    diff_rate: "-0.76"
+index_timeline: 
+ showapi_res_code: 0
+ showapi_res_error: ""
+ showapi_res_body: 
+  dataList: 
+   - 
+    minuteList: 
+     - 
+      time: 0930
+      avgPrice: "3209.34"
+      volume: 80373500
+      nowPrice: "3209.34"
+     - 
+      time: 0931
+      avgPrice: "3208.4"
+      volume: 288984500
+      nowPrice: "3207.46"
+    count: 242
+    yestclose: "3215.37"
+    lastVolume: 20402395600
+    date: 20161209
+   - 
+    minuteList: 
+     - 
+      time: 0932
+      avgPrice: "3209.34"
+      volume: 80373500
+      nowPrice: "3207.46"
+     - 
+      time: 0933
+      avgPrice: "3208.4"
+      volume: 288984500
+      nowPrice: "3209.34"
+    count: 242
+    yestclose: "3215.37"
+    lastVolume: 20402395600
+    date: 20161210
+  ret_code: 0
+  market: sh
+  name: "上证指数"
+  code: "000001"
+timeline: 
+ showapi_res_code: 0
+ showapi_res_error: ""
+ showapi_res_body: 
+  dataList: 
+   - 
+    minuteList: 
+     - 
+      time: 0930
+      avgPrice: "7.55"
+      volume: 0
+      nowPrice: "7.55"
+     - 
+      time: 0931
+      avgPrice: "7.555"
+      volume: 347785
+      nowPrice: "7.56"
+     - 
+      time: 0932
+      avgPrice: "7.56"
+      volume: 146900
+      nowPrice: "7.57"
+     - 
+      time: 0933
+      avgPrice: "7.563"
+      volume: 47800
+      nowPrice: "7.57"
+     - 
+      time: 0934
+      avgPrice: "7.564"
+      volume: 166800
+      nowPrice: "7.57"
+     - 
+      time: 0935
+      avgPrice: "7.565"
+      volume: 131200
+      nowPrice: "7.57"
+     - 
+      time: 0936
+      avgPrice: "7.564"
+      volume: 162900
+      nowPrice: "7.56"
+    count: 242
+    yestclose: "7.55"
+    lastVolume: 22240988
+    date: 20161125
+  ret_code: 0
+  market: sh
+  name: "中国石油"
+  code: 601857
 ---
 # 股票行情
 
@@ -172,7 +290,7 @@ export default {
 
  <aps-ali-010845  :data="$frontmatter.data"  class="mt-10"  ></aps-ali-010845> 
 
-## K线图
+## 大盘股指K线数据
 
 ### 数据准备
 
@@ -231,6 +349,215 @@ export default {
 ### 最终的展示效果
 
  <aps-ali-010845-kline  :data="$frontmatter.kline_data"  class="mt-10"  ></aps-ali-010845-kline> 
+
+ ## 大盘历史查询
+
+ ### 数据准备
+
+ ```js
+ export default {
+     data(){
+         market_history:{
+            "showapi_res_code": 0,
+            "showapi_res_error": "",
+            "showapi_res_body": {
+                "ret_code": 0,
+                "month": "201702",
+                "list": [
+                {
+                    "min_price": "3225.97",  //最低价
+                    "trade_num": "1512443",  //交易手数
+                    "trade_money": "186019288810", //交易金额（元）
+                    "diff_money": "13.07", //涨跌额
+                    "close_price": "3241.73",//收盘价
+                    "open_price": "3225.97", //开盘价
+                    "max_price": "3242.68", //最高价
+                    "date": "2017-02-28", //日期 
+                    "diff_rate": "0.40" //涨跌幅
+                },
+                {
+                    "min_price": "3224.09",
+                    "trade_num": "1825810",
+                    "trade_money": "211395715856",
+                    "diff_money": "-24.77",
+                    "close_price": "3228.66",
+                    "open_price": "3249.19",
+                    "max_price": "3251.65",
+                    "date": "2017-02-27",
+                    "diff_rate": "-0.76"
+                } 
+                ]
+            }
+        }
+     }
+ }
+ ```
+
+ ### 页面呈现
+
+```html 
+ <aps-ali-010845-market-history  :data="market_history"  ></aps-ali-010845-market-history> 
+```
+
+### 最终的展示效果
+
+ <aps-ali-010845-market-history  :data="$frontmatter.market_history"  class="mt-10"  ></aps-ali-010845-market-history> 
+
+ ## 大盘股指分时线
+
+ ### 数据准备
+
+ ```js
+ export default {
+     data(){
+         index_timeline:{
+            "showapi_res_code": 0,
+            "showapi_res_error": "",
+            "showapi_res_body": {
+                "dataList": [//分时线每天的数据结构
+                    {
+                        "minuteList": [//分时线数据列表
+                            {
+                                "time": "0930",//当前分钟
+                                "avgPrice": "3209.34",//均价
+                                "volume": "80373500",//交易量(单位股)
+                                "nowPrice": "3209.34"//当前时间的价格
+                            },
+                            {
+                                "time": "0931",//当前分钟
+                                "avgPrice": "3208.4",//均价
+                                "volume": "288984500",//交易量(单位股)
+                                "nowPrice": "3207.46"//当前时间的价格
+                            } 
+                        ],
+                        "count": "242",//总条目数
+                        "yestclose": "3215.37",//昨日收盘价
+                        "lastVolume": "20402395600",//昨日成交量
+                        "date": "20161209"//当前日期
+                    },
+                    {
+                        "minuteList": [//分时线数据列表
+                            {
+                                "time": "0932",//当前分钟
+                                "avgPrice": "3209.34",//均价
+                                "volume": "80373500",//交易量(单位股)
+                                 "nowPrice": "3207.46"//当前时间的价格
+                            },
+                            {
+                                "time": "0933",//当前分钟
+                                "avgPrice": "3208.4",//均价
+                                "volume": "288984500",//交易量(单位股)
+                                "nowPrice": "3209.34"//当前时间的价格
+                            } 
+                        ],
+                        "count": "242",//总条目数
+                        "yestclose": "3215.37",//昨日收盘价
+                        "lastVolume": "20402395600",//昨日成交量
+                        "date": "20161210"//当前日期
+                    },
+                ],
+                "ret_code": 0,
+                "market": "sh",
+                "name": "上证指数",
+                "code": "000001"
+            }
+        }
+     }
+ }
+ ```
+
+ ### 页面呈现
+
+```html 
+ <aps-ali-010845-index-timeline  :data="index_timeline"  ></aps-ali-010845-index-timeline> 
+```
+
+### 最终的展示效果
+
+ <aps-ali-010845-index-timeline  :data="$frontmatter.index_timeline"  class="mt-10"  ></aps-ali-010845-index-timeline> 
+
+  ## 股票实时分时线数据
+
+ ### 数据准备
+
+ ```js
+ export default {
+     data(){
+         timeline:{
+            "showapi_res_code": 0,
+            "showapi_res_error": "",
+            "showapi_res_body": {
+                "dataList": [//分时线每天的数据结构
+                    {
+                        "minuteList": [//分时线数据列表
+                            {
+                                "time": "0930",//当前分钟
+                                "avgPrice": "7.55",//均价
+                                "volume": "0",//交易量
+                                "nowPrice": "7.55"//当前时间的价格
+                            },
+                            {
+                                "time": "0931",//当前分钟
+                                "avgPrice": "7.555",//均价
+                                "volume": "347785",//交易量
+                                "nowPrice": "7.56"//当前时间的价格
+                            },
+                            {
+                                "time": "0932",//当前分钟
+                                "avgPrice": "7.56",//均价
+                                "volume": "146900",//交易量
+                                "nowPrice": "7.57"//当前时间的价格
+                            },
+                            {
+                                "time": "0933",//当前分钟
+                                "avgPrice": "7.563",//均价
+                                "volume": "47800",//交易量
+                                "nowPrice": "7.57"//当前时间的价格
+                            },
+                            {
+                                "time": "0934",//当前分钟
+                                "avgPrice": "7.564",//均价
+                                "volume": "166800",//交易量
+                                "nowPrice": "7.57"//当前时间的价格
+                            },
+                            {
+                                "time": "0935",//当前分钟
+                                "avgPrice": "7.565",//均价
+                                "volume": "131200",//交易量
+                                "nowPrice": "7.57"//当前时间的价格
+                            },
+                            {
+                                "time": "0936",//当前分钟
+                                "avgPrice": "7.564",//均价
+                                "volume": "162900",//交易量
+                                "nowPrice": "7.56"//当前时间的价格
+                            } 
+                        ],
+                        "count": "242",//总条目数
+                        "yestclose": "7.55",//昨日收盘价
+                        "lastVolume": "22240988",//昨日成交量
+                        "date": "20161125"//当前日期
+                    }
+                ],
+                "ret_code": 0,
+                "market": "sh",
+                "name": "中国石油",
+                "code": "601857"
+            }
+        }
+     }
+ }
+ ```
+
+ ### 页面呈现
+
+```html 
+ <aps-ali-010845-timeline  :data="timeline"  ></aps-ali-010845-timeline> 
+```
+
+### 最终的展示效果
+
+ <aps-ali-010845-timeline  :data="$frontmatter.timeline"  class="mt-10"  ></aps-ali-010845-timeline> 
 
  <style>
 table{

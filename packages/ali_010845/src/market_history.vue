@@ -2,6 +2,9 @@
     <v-chart :options="data_option"/>
 </template>
 <script>
+
+//大盘历史查询
+
 import ECharts from 'vue-echarts'
 import 'echarts/lib/chart/line'
 import 'echarts/lib/chart/candlestick'
@@ -10,7 +13,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/dataZoom';
 
 export default {
-    name:'aps-ali-010845-kline',
+    name:'aps-ali-010845-market-history',
     components:{
         'v-chart': ECharts,
     },
@@ -29,27 +32,16 @@ export default {
   },
   computed:{
         dataList(){
-            return this.data.showapi_res_body.dataList
+            return this.data.showapi_res_body.list
         },
         times(){
             return this.dataList.map(res=>{
-                let _time = res.time ? res.time.toString() : res.minute.toString()
-                let time = _time.substr(0,4) 
-                 + '/' + _time.substr(4,2) 
-                 + '/' + _time.substr(6,2) 
-                 + ' ' + _time.substr(8,2) 
-                 + ':' + _time.substr(10,2) 
-                return time
+                return res.date
             })
         },
          data_kline(){
             return this.dataList.map(item=> {
-                return [+item.open, +item.close, +item.min, +item.max]
-            })
-        },
-        volumn(){
-            return this.dataList.map(item=> {
-                return +item.volumn
+                return [+item.open_price, +item.close_price, +item.min_price, +item.max_price]
             })
         },
         data_option(){
@@ -79,7 +71,7 @@ export default {
                     data: this.times,
                     axisLine: { lineStyle: { color: '#8392A5' } }
                 },
-                yAxis: [
+                yAxis: 
                     {
                         type:'value',
                         scale: true,
@@ -87,14 +79,7 @@ export default {
                         axisLine: { lineStyle: { color: '#8392A5' } },
                         splitLine: { show: false }
                     },
-                    {
-                        type:'value',
-                        scale: true,
-                        inverse: false,
-                        axisLine: { lineStyle: { color: '#5793f3' } },
-                        splitLine: { show: false }
-                    }
-                ],
+                
                 grid: {
                     bottom: 80
                 },
