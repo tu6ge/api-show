@@ -8,7 +8,6 @@ module.exports = {
           { text: '指南', link: '/guide/' },
         ],
         sidebarDepth:1,
-        
         sidebar: [
             '/guide/',
             '/guide/quickstart',                                   //快速上手
@@ -16,7 +15,7 @@ module.exports = {
                 title:'接口列表',
                 collapsable: false,
                 children:[
-                    '/guide/jisutvjmyg',                                   //电视节目预告
+                    {title:'电视节目预告',path:'/jisutvjmyg/'},                                   //电视节目预告
                     '/guide/ipquery',                                                                           //ip地址归属地查询
                     '/guide/shares',                                                                             //股票行情
                     '/guide/pdp-elite',       //性格分析
@@ -43,6 +42,10 @@ module.exports = {
         // 默认是 false, 设置为 true 来启用
         editLinks: true,
         // 默认为 "Edit this page"
-        editLinkText: '帮助我们改善此页面！'
+        editLinkText: '帮助我们改善此页面！',
+        
       },
+    plugins: [
+        require('./plugin-api-show.js')
+    ]
 }
