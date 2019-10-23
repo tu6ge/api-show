@@ -1,7 +1,31 @@
+var fs = require('fs')
+const path = require('path')
+
+function getAllPackages() {
+    let array = []
+    let pack_path = path.resolve(__dirname, '../../packages/')
+    let files = fs.readdirSync(pack_path)
+    files.forEach(function (item) {
+        let fPath = path.join(pack_path,item)
+        let stat = fs.statSync(fPath)
+        if(stat.isDirectory() === true) {
+            array.push(item)
+        }
+    })
+    return array
+}
+const packages = getAllPackages()
+const routes = packages.map(res=>{
+    return {
+        title: res,
+        path: '/examples/'+res + "/"
+    }
+})
 
 module.exports = {
     title:"api show",
     base: process.env.NODE_ENV === 'production'  ? '/api-show/':'/',
+    theme: require('./theme/index.js'),
     themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -14,24 +38,7 @@ module.exports = {
             {
                 title:'接口列表',
                 collapsable: false,
-                children:[
-                    {title:'电视节目预告',path:'/jisutvjmyg/'},                                   //电视节目预告
-                    '/guide/ipquery',                                                                           //ip地址归属地查询
-                    '/guide/shares',                                                                             //股票行情
-                    '/guide/pdp-elite',       //性格分析
-                    '/guide/ocr-businesslicense',       //营业执照图像识别
-                    '/guide/ai-guidance-elite',       //AI智能导诊
-                    '/guide/ai-driving-vehicle-license',       //驾驶证识别
-                    '/guide/todayoil',       //今日油价
-                    '/guide/gold',       //黄金价格查询
-                    '/guide/finance-calendar',       //财经日历
-                    '/guide/waihui',       //外汇牌价汇率
-                    '/guide/bankcard',       //银行卡归属地查询
-                    '/guide/goexpress',       //全球快递查询
-                    '/guide/sz-sh-stock-history',       //沪深港股票历史行情
-                    '/guide/super_burn_child',       //母婴健康-智能预测
-                    '/guide/discern-plant',                                         //植物识别
-                ]
+                children:routes,
             }
             
         ],
@@ -44,8 +51,11 @@ module.exports = {
         // 默认为 "Edit this page"
         editLinkText: '帮助我们改善此页面！',
         
-      },
+    },
     plugins: [
-        require('./plugin-api-show.js')
+        [
+            require('./plugin-api-show.js'),
+            {packages}
+        ]
     ]
 }
