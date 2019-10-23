@@ -1,23 +1,23 @@
-# api-ui
+# api-show
 
 ## Project setup
 ```
-npm install
+npm install api-show
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run docs:dev
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run lib
 ```
 
-### Run your tests
+### Compiles and minifies for docs production
 ```
-npm run test
+npm run docs:build
 ```
 
 ### Lints and fixes files
@@ -25,7 +25,5 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
