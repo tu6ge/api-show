@@ -1,9 +1,8 @@
-var fs = require('fs')
+const fs = require('fs')
 const path = require('path')
 
-function getAllPackages() {
+function getAllPackages(pack_path) {
     let array = []
-    let pack_path = path.resolve(__dirname, '../../packages/')
     let files = fs.readdirSync(pack_path)
     files.forEach(function (item) {
         let fPath = path.join(pack_path,item)
@@ -14,7 +13,7 @@ function getAllPackages() {
     })
     return array
 }
-const packages = getAllPackages()
+const packages = getAllPackages(path.resolve(__dirname, '../../packages/'))
 const routes = packages.map(res=>{
     return '/examples/'+res + "/"
 })

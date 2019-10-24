@@ -26,7 +26,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.1.0"
+    "vuepress": "^1.1.0",
+    "yaml": "^1.7.2"
   },
   "eslintConfig": {
     "root": true,

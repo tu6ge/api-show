@@ -9,6 +9,8 @@
 
 <script>
 import Vue from 'vue'
+import YAML from 'yaml'
+
 import apishow from "../packages/index"
 Vue.use(apishow)
 
@@ -18,6 +20,9 @@ if(module.hot){
 
 export default {
   name: 'app',
+  created(){
+      console.log(YAML.stringify(this.ali_011807))
+  },
   data(){
       return {
             ali_011807:{

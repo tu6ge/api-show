@@ -282,19 +282,19 @@ export default {
 
 ### 页面呈现
 
-```html 
- <aps-ali-010845  :data="data"  ></aps-ali-010845> 
+```html
+ <aps-ali-010845  :data="data"  ></aps-ali-010845>
 ```
 
 ### 最终的展示效果
 
- <aps-ali-010845  :data="$frontmatter.data"  class="mt-10"  ></aps-ali-010845> 
+<aps-ali-010845  :data="$frontmatter.data"  class="mt-10"  ></aps-ali-010845>
 
 ## 大盘股指K线数据
 
 ### 数据准备
 
-```js 
+```js
 export default {
     data(){
         return {
@@ -326,7 +326,7 @@ export default {
                             "volumn": "4614218.000",//时间区间成交手数总合
                             "max": "3228.230",//时间区间内最高的价格
                             "close": "3228.230"//时间区间结束的价格
-                        } 
+                        }
                     ],
                     "ret_code": 0,
                     "market": "sh",
@@ -364,28 +364,28 @@ export default {
                 "ret_code": 0,
                 "month": "201702",
                 "list": [
-                {
-                    "min_price": "3225.97",  //最低价
-                    "trade_num": "1512443",  //交易手数
-                    "trade_money": "186019288810", //交易金额（元）
-                    "diff_money": "13.07", //涨跌额
-                    "close_price": "3241.73",//收盘价
-                    "open_price": "3225.97", //开盘价
-                    "max_price": "3242.68", //最高价
-                    "date": "2017-02-28", //日期 
-                    "diff_rate": "0.40" //涨跌幅
-                },
-                {
-                    "min_price": "3224.09",
-                    "trade_num": "1825810",
-                    "trade_money": "211395715856",
-                    "diff_money": "-24.77",
-                    "close_price": "3228.66",
-                    "open_price": "3249.19",
-                    "max_price": "3251.65",
-                    "date": "2017-02-27",
-                    "diff_rate": "-0.76"
-                } 
+                    {
+                        "min_price": "3225.97",  //最低价
+                        "trade_num": "1512443",  //交易手数
+                        "trade_money": "186019288810", //交易金额（元）
+                        "diff_money": "13.07", //涨跌额
+                        "close_price": "3241.73",//收盘价
+                        "open_price": "3225.97", //开盘价
+                        "max_price": "3242.68", //最高价
+                        "date": "2017-02-28", //日期 
+                        "diff_rate": "0.40" //涨跌幅
+                    },
+                    {
+                        "min_price": "3224.09",
+                        "trade_num": "1825810",
+                        "trade_money": "211395715856",
+                        "diff_money": "-24.77",
+                        "close_price": "3228.66",
+                        "open_price": "3249.19",
+                        "max_price": "3251.65",
+                        "date": "2017-02-27",
+                        "diff_rate": "-0.76"
+                    }
                 ]
             }
         }
