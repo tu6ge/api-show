@@ -234,6 +234,44 @@ timeline:
   market: sh
   name: "中国石油"
   code: 601857
+real_stockinfo:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    ret_code: 0
+    stockMarket: {todayMax: '16.160', highLimit: '17.57', buy5_n: '18100', buy2_n: '56600',
+      tradeNum: '3336273', buy2_m: '16.080', buy5_m: '16.050', currcapital: '115641.6852',
+      sell3_m: '16.120', openPrice: '15.950', buy3_m: '16.070', buy4_m: '16.060',
+      circulation_value: '186.18', buy4_n: '25000', date: '2017-04-18', sell5_n: '19300',
+      buy3_n: '35800', all_value: '186.18', sell5_m: '16.140', closePrice: '15.970',
+      time: '11:11:43', turnover: 0.289%, sell3_n: '12900', name: 白云机场, sell4_n: '9600',
+      downLimit: '14.37', sell4_m: '16.130', tradeAmount: '53647432.000', swing: '1.31',
+      totalcapital: '115641.6852', diff_rate: '0.81', yestodayClosePrice: '15.970',
+      sell1_n: '67963', todayMin: '15.950', sell1_m: '16.100', max52: '', diff_money: '0.13',
+      code: '600004', nowPrice: '16.100', sell2_m: '16.110', min52: '', sell2_n: '20879',
+      buy1_m: '16.090', pe: '13.64', buy1_n: '53900', market: sh, pb: '1.74'}
+    indexList:
+    - {yestodayClosePrice: '3222.1673', max52: '0', diff_money: '-3.2288', tradeNum: '89917531',
+      code: sh000001, maxPrice: '3225.0546', nowPrice: '3218.9385', min52: '0', time: '2017-04-18
+        11:11:42', name: 上证指数, tradeAmount: '102068196850', swing: '0.3923', todayOpenPrice: '3215.3963',
+      diff_rate: '-0.1002', minPrice: '3212.4147'}
+    - {yestodayClosePrice: '10450.862', max52: '0', diff_money: '52.0050', tradeNum: '8936187496',
+      code: sz399001, maxPrice: '10522.852', nowPrice: '10502.867', min52: '0', time: '2017-04-18
+        11:11:48', name: 深证成指, tradeAmount: '128120230756.756', swing: '0.7086', todayOpenPrice: '10449.008',
+      diff_rate: '0.4976', minPrice: '10448.799'}
+    - {yestodayClosePrice: '6756.199', max52: '0', diff_money: '28.7090', tradeNum: '704151391',
+      code: sz399005, maxPrice: '6794.898', nowPrice: '6784.908', min52: '0', time: '2017-04-18
+        11:11:48', name: 中小板指, tradeAmount: '13042317160.670', swing: '0.5949', todayOpenPrice: '6757.345',
+      diff_rate: '0.4249', minPrice: '6754.704'}
+    - {yestodayClosePrice: '1868.281', max52: '0', diff_money: '5.5260', tradeNum: '387746143',
+      code: sz399006, maxPrice: '1878.097', nowPrice: '1873.807', min52: '0', time: '2017-04-18
+        11:11:48', name: 创业板指, tradeAmount: '7347006509.620', swing: '0.5632', todayOpenPrice: '1867.575',
+      diff_rate: '0.2958', minPrice: '1867.575'}
+    - {yestodayClosePrice: '24261.660', max52: '24656.650', diff_money: '-231.750',
+      tradeNum: '0', code: HSI, maxPrice: '24276.311', nowPrice: '24029.910', min52: '19594.609',
+      time: '2017-04-18 11:11:48', name: 恒生指数, tradeAmount: '29530142.152', swing: '1.1330',
+      todayOpenPrice: '24268.170', diff_rate: '-0.960', minPrice: '24001.430'}
+
 ---
 # 股票行情
 
@@ -558,6 +596,174 @@ export default {
 ### 最终的展示效果
 
  <aps-ali-010845-timeline  :data="$frontmatter.timeline"  class="mt-10"  ></aps-ali-010845-timeline> 
+
+
+## 股票行情单支查询
+
+
+ ### 数据准备
+
+ ```js
+ export default {
+     data(){
+         return {
+            real_stockinfo:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "ret_code": 0,
+                    "stockMarket":   {
+                        "todayMax": "16.160",//今日最高价
+                        "highLimit": "17.57",//涨停价
+                        "buy5_n": "18100",//买五
+                        "buy2_n": "56600",//买二
+                        "tradeNum": "3336273",//成交量(股，不是手)
+                        "buy2_m": "16.080",//买二报价
+                        "buy5_m": "16.050",//买五报价
+                        "currcapital": "115641.6852",
+                        "sell3_m": "16.120",//卖三报价
+                        "openPrice": "15.950",//今日开盘价
+                        "buy3_m": "16.070",//买三报价
+                        "buy4_m": "16.060",//买四报价
+                        "circulation_value": "186.18",//流通市值，亿元
+                        "buy4_n": "25000",//买四
+                        "date": "2017-04-18",//日期
+                        "sell5_n": "19300",//卖五
+                        "buy3_n": "35800",//买三
+                        "all_value": "186.18",//总市值，亿元
+                        "sell5_m": "16.140",//卖五报价
+                        "closePrice": "15.970",//昨日收盘价
+                        "time": "11:11:43",//刷新时间
+                        "turnover": "0.289%",//换手率
+                        "sell3_n": "12900",//卖三
+                        "name": "白云机场",//上证指数
+                        "sell4_n": "9600",//卖四
+                        "downLimit": "14.37",//跌停价
+                        "sell4_m": "16.130",//卖四报价
+                        "tradeAmount": "53647432.000",//成交金额（元）
+                        "swing": "1.31",//振幅
+                        "totalcapital": "115641.6852", //总股本，万股
+                        "diff_rate": "0.81",//涨跌幅度
+                        "yestodayClosePrice": "15.970",//昨日收盘价
+                        "sell1_n": "67963",//卖一
+                        "todayMin": "15.950",//今日最低价
+                        "sell1_m": "16.100",//卖一报价
+                        "max52": "",//52周最高价
+                        "diff_money": "0.13",//涨跌金额
+                        "code": "600004",//sh000001
+                        "nowPrice": "16.100",//当前价
+                        "sell2_m": "16.110",//卖二
+                        "min52": "",//52周最低价
+                        "sell2_n": "20879",//卖二
+                        "buy1_m": "16.090",//买一报价（金额，元）
+                        "pe": "13.64",//市盈率(TTM,动态)
+                        "buy1_n": "53900",//买一数量（股）
+                        "market": "sh",
+                        "pb": "1.74"//市净率
+                    },
+                    "indexList": [
+                    {
+                        "yestodayClosePrice": "3222.1673",//昨日收盘点数
+                        "max52": "0",//52周最大点数
+                        "diff_money": "-3.2288",//涨跌点数
+                        "tradeNum": "89917531",//成交量(手)
+                        "code": "sh000001",
+                        "maxPrice": "3225.0546",//今日最高点数
+                        "nowPrice": "3218.9385",//当前点数
+                        "min52": "0",//52周最低点数
+                        "time": "2017-04-18 11:11:42",//时间
+                        "name": "上证指数",//股票名称
+                        "tradeAmount": "102068196850",//成交金额（金额，元）
+                        "swing": "0.3923",//振幅 %
+                        "todayOpenPrice": "3215.3963", //今日开盘点数
+                        "diff_rate": "-0.1002",//涨跌幅度%
+                        "minPrice": "3212.4147" //今日最低点数
+                    },
+                    {
+                        "yestodayClosePrice": "10450.862",
+                        "max52": "0",
+                        "diff_money": "52.0050",
+                        "tradeNum": "8936187496",
+                        "code": "sz399001",
+                        "maxPrice": "10522.852",
+                        "nowPrice": "10502.867",
+                        "min52": "0",
+                        "time": "2017-04-18 11:11:48",
+                        "name": "深证成指",
+                        "tradeAmount": "128120230756.756",
+                        "swing": "0.7086",
+                        "todayOpenPrice": "10449.008",
+                        "diff_rate": "0.4976",
+                        "minPrice": "10448.799"
+                    },
+                    {
+                        "yestodayClosePrice": "6756.199",
+                        "max52": "0",
+                        "diff_money": "28.7090",
+                        "tradeNum": "704151391",
+                        "code": "sz399005",
+                        "maxPrice": "6794.898",
+                        "nowPrice": "6784.908",
+                        "min52": "0",
+                        "time": "2017-04-18 11:11:48",
+                        "name": "中小板指",
+                        "tradeAmount": "13042317160.670",
+                        "swing": "0.5949",
+                        "todayOpenPrice": "6757.345",
+                        "diff_rate": "0.4249",
+                        "minPrice": "6754.704"
+                    },
+                    {
+                        "yestodayClosePrice": "1868.281",
+                        "max52": "0",
+                        "diff_money": "5.5260",
+                        "tradeNum": "387746143",
+                        "code": "sz399006",
+                        "maxPrice": "1878.097",
+                        "nowPrice": "1873.807",
+                        "min52": "0",
+                        "time": "2017-04-18 11:11:48",
+                        "name": "创业板指",
+                        "tradeAmount": "7347006509.620",
+                        "swing": "0.5632",
+                        "todayOpenPrice": "1867.575",
+                        "diff_rate": "0.2958",
+                        "minPrice": "1867.575"
+                    },
+                    {
+                        "yestodayClosePrice": "24261.660",
+                        "max52": "24656.650",
+                        "diff_money": "-231.750",
+                        "tradeNum": "0",
+                        "code": "HSI",
+                        "maxPrice": "24276.311",
+                        "nowPrice": "24029.910",
+                        "min52": "19594.609",
+                        "time": "2017-04-18 11:11:48",
+                        "name": "恒生指数",
+                        "tradeAmount": "29530142.152",
+                        "swing": "1.1330",
+                        "todayOpenPrice": "24268.170",
+                        "diff_rate": "-0.960",
+                        "minPrice": "24001.430"
+                    }
+                    ]
+                }
+            }
+         }
+     }
+ }
+ ```
+
+  ### 页面呈现
+
+```html 
+ <aps-ali-010845-real-stockinfo  :data="real_stockinfo"  ></aps-ali-010845-real-stockinfo> 
+```
+
+### 最终的展示效果
+
+ <aps-ali-010845-real-stockinfo  :data="$frontmatter.real_stockinfo"  class="mt-10"  ></aps-ali-010845-real-stockinfo> 
 
  <style>
 table{

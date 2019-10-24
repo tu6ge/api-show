@@ -55,7 +55,7 @@
       </el-table-column>
        <el-table-column
         prop="swing"
-        label="swing">
+        label="振幅">
       </el-table-column>
       <el-table-column
         prop="todayOpenPrice"
