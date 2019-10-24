@@ -9,7 +9,10 @@ module.exports =  (options, ctx) => {
                 path: '/examples/'+pkg + "/",
                 filePath: path.resolve(__dirname, '../../packages/'+pkg+'/doc.md')
             }
-        })
+        }),
+        async clientDynamicModules () {
+            //console.log(ctx.themeAPI.theme.entry['$$options'])
+        }
     }
     
 }
