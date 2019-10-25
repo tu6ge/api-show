@@ -32,12 +32,6 @@ module.exports = function(){
             sidebar: [
                 '/guide/',
                 '/guide/quickstart',                                   //快速上手
-                {
-                    title:'接口列表',
-                    collapsable: false,
-                    children:routes,
-                }
-                
             ],
             displayAllHeaders: false,
             lastUpdated: '最后更新时间',
@@ -51,8 +45,7 @@ module.exports = function(){
         },
         plugins: [
             [
-                require('./plugin-api-show.js'),
-                {packages}
+                require('./plugin-api-show.js')
             ]
         ]
     }
