@@ -10,9 +10,12 @@ module.exports =  (options, ctx) => {
                 filePath: path.resolve(__dirname, '../../packages/'+pkg+'/doc.md')
             }
         }),
-        // async clientDynamicModules () {
-        //     //console.log(ctx.themeAPI.theme.entry['$$options'])
-        // }
+        async clientDynamicModules () {
+            let siteData = ctx.getSiteData()
+            siteData.title = 'plugin update title'
+            const code = `export const siteData = ${JSON.stringify(siteData, null, 2)}`
+            return { name: 'siteData.js', content: code, dirname: 'internal' }
+        }
     }
     
 }
