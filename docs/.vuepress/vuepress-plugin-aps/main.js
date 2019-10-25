@@ -13,19 +13,19 @@ function getAllPackages(pack_path) {
     })
     return array
 }
-const packages = getAllPackages(path.resolve(__dirname, '../../packages/'))
-const routes = packages.map(res=>{
-    return '/examples/'+res + "/"
-})
+
 
 module.exports =  (options, ctx) => {
-    //console.log(options)
+    const packages = getAllPackages(options.pack_path)
+    const routes = packages.map(res=>{
+        return '/examples/'+res + "/"
+    })
     return {
         name:'plugin-api-show',
         additionalPages: packages.map(pkg=>{
             return {
                 path: '/examples/'+pkg + "/",
-                filePath: path.resolve(__dirname, '../../packages/'+pkg+'/doc.md')
+                filePath: path.resolve(options.pack_path, pkg+'/doc.md')
             }
         }),
         async clientDynamicModules () {

@@ -1,0 +1,15 @@
+{
+  "name": "@api-show/vuepress-plugin-aps",
+  "private": false,
+  "version": "0.1.0",
+  "description": "doc sidebar help",
+  "main": "main.js",
+  "peerDependencies": {
+    "vuepress": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tu6ge",
+  "license": "MIT"
+}

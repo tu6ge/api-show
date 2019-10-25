@@ -1,23 +1,4 @@
-const fs = require('fs')
 const path = require('path')
-
-function getAllPackages(pack_path) {
-    let array = []
-    let files = fs.readdirSync(pack_path)
-    files.forEach(function (item) {
-        let fPath = path.join(pack_path,item)
-        let stat = fs.statSync(fPath)
-        if(stat.isDirectory() === true) {
-            array.push(item)
-        }
-    })
-    return array
-}
-const packages = getAllPackages(path.resolve(__dirname, '../../packages/'))
-const routes = packages.map(res=>{
-    return '/examples/'+res + "/"
-})
-
 module.exports = function(){
     return {
         title:"api show",
@@ -45,7 +26,8 @@ module.exports = function(){
         },
         plugins: [
             [
-                require('./plugin-api-show.js')
+                '@api-show/aps',
+                {pack_path:path.resolve(__dirname, '../../packages/')}
             ]
         ]
     }
