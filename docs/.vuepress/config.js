@@ -28,9 +28,7 @@ module.exports = function(){
                 '@api-show/aps',
                 {
                     pack_path:path.resolve(__dirname, '../../packages/'),
-                    sidebar:{
-                        title:"我的接口们"
-                    },
+                    sidebar:true,
                 }
             ],
             // [
@@ -42,6 +40,12 @@ module.exports = function(){
             //         }
             //     }
             // ]
+            [
+                '@vuepress/google-analytics',
+                {
+                  'ga': 'UA-150939145-1'
+                }
+            ]
         ]
     }
 }
