@@ -1,0 +1,23 @@
+{
+  "id": "1478352",
+  "name": "api-show",
+  "font_family": "aps-font",
+  "css_prefix_text": "aps-font-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "602567",
+      "name": "箭头上",
+      "font_class": "down",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "6806977",
+      "name": "Up-1",
+      "font_class": "Up-",
+      "unicode": "ebac",
+      "unicode_decimal": 60332
+    }
+  ]
+}

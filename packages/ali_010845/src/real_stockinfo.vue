@@ -1,11 +1,18 @@
 <template>
-    <div >
-        <el-breadcrumb>
-          <el-breadcrumb-item>星星科技(300256.SZ)</el-breadcrumb-item>
-        </el-breadcrumb>
+    <div class="aps-ali-010845-real-stockinfo">
+        <h2>
+          星星科技<span>(300256.SZ)</span>
+        </h2>
         <el-row>
             <el-col :span="8" class="text-center">
-                <el-row>5.67</el-row>
+                <el-row>
+                    <el-col :span="12">5.67</el-col>
+                    <el-col :span="4"><font class="aps-font  aps-font-up"></font></el-col>
+                    <el-col :span="8">
+                        <el-row>14.94</el-row>
+                        <el-row>+96.20%</el-row>
+                    </el-col>
+                </el-row>
                 <el-row>
                     <el-col :span="12">涨停：5.67</el-col>
                     <el-col :span="12">跌停：4.64</el-col>
@@ -37,10 +44,11 @@
 </template>
 
 <script>
-import 'element-ui/lib/theme-chalk/col.css';
-import 'element-ui/lib/theme-chalk/row.css';
-import 'element-ui/lib/theme-chalk/breadcrumb.css';
-import 'element-ui/lib/theme-chalk/breadcrumb-item.css';
+import 'element-ui/lib/theme-chalk/col.css'
+import 'element-ui/lib/theme-chalk/row.css'
+import 'element-ui/lib/theme-chalk/breadcrumb.css'
+import 'element-ui/lib/theme-chalk/breadcrumb-item.css'
+import '../../style/iconfont/iconfont.css'
 import {
     Row,
     Col,
@@ -67,3 +75,18 @@ export default {
 
 }
 </script>
+<style scoped lang="scss">
+.aps-ali-010845-real-stockinfo{
+    font-family: 微软雅黑,黑体;
+    color: #012793;
+    h2{
+        font-size: 18px;
+        font-weight:none;
+        color: #012793;
+        span{
+            font-size:10px;
+            line-height:18px;
+        }
+    }
+}
+</style>

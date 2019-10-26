@@ -22,7 +22,11 @@ module.exports =  (options, ctx) => {
             + 'For more details, refer to https://github.com/tu6ge/api-show/tree/master/docs/.vuepress/vuepress-plugin-aps. \n'
         )
     }
-    const packages = getAllPackages(options.pack_path)
+    let packages = getAllPackages(options.pack_path)
+
+    packages =  packages.filter(pkg=>{
+        return fs.existsSync(path.resolve(options.pack_path, pkg+'/doc.md'))
+    })
     const routes = packages.map(res=>{
         return '/examples/'+res + "/"
     })
