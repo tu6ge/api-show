@@ -22,6 +22,11 @@
   resolved "https://registry.npm.taobao.org/@ant-design/icons/download/@ant-design/icons-2.1.1.tgz?cache=0&sync_timestamp=1568038941093&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40ant-design%2Ficons%2Fdownload%2F%40ant-design%2Ficons-2.1.1.tgz#7b9c08dffd4f5d41db667d9dbe5e0107d0bd9a4a"
   integrity sha1-e5wI3/1PXUHbZn2dvl4BB9C9mko=
 
+"@api-show/vuepress-plugin-aps@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@api-show/vuepress-plugin-aps/-/vuepress-plugin-aps-0.1.1.tgz#f72ca36a8c4d2a9f52054ab6f78b709469f86327"
+  integrity sha512-61I6h0kvanEmVfTz0db2gCUeoyi4IIHsqUkCzc23vuQWy38UMpf7wpgVyc6Uzfupdc+PVMuFgRGPxY5w7+26Bw==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"

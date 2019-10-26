@@ -16,12 +16,18 @@ function getAllPackages(pack_path) {
 
 
 module.exports =  (options, ctx) => {
+    if(!options.pack_path){
+        throw new Error(
+            '[vuepress-plugin-aps] You must specify a pack_path. \n'
+            + 'For more details, refer to https://github.com/tu6ge/api-show/tree/master/docs/.vuepress/vuepress-plugin-aps. \n'
+        )
+    }
     const packages = getAllPackages(options.pack_path)
     const routes = packages.map(res=>{
         return '/examples/'+res + "/"
     })
     return {
-        name:'plugin-api-show',
+        name:'@api-show/vuepress-plugin-aps',
         additionalPages: packages.map(pkg=>{
             return {
                 path: '/examples/'+pkg + "/",
@@ -29,9 +35,12 @@ module.exports =  (options, ctx) => {
             }
         }),
         async clientDynamicModules () {
+            if(!options.sidebar){
+                return false
+            }
             let siteData = ctx.getSiteData()
             siteData.themeConfig.sidebar.push({
-                title:'接口列表',
+                title: options.sidebar.title ? options.sidebar.title :'接口列表',
                 collapsable: false,
                 children:routes,
             })

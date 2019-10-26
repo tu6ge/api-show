@@ -3,7 +3,6 @@ module.exports = function(){
     return {
         title:"api show",
         base: process.env.NODE_ENV === 'production'  ? '/api-show/':'/',
-        //theme: require('./theme/index.js'),
         themeConfig: {
             nav: [
             { text: '首页', link: '/' },
@@ -27,8 +26,22 @@ module.exports = function(){
         plugins: [
             [
                 '@api-show/aps',
-                {pack_path:path.resolve(__dirname, '../../packages/')}
-            ]
+                {
+                    pack_path:path.resolve(__dirname, '../../packages/'),
+                    sidebar:{
+                        title:"我的接口们"
+                    },
+                }
+            ],
+            // [
+            //     require('./vuepress-plugin-aps/main.js'),
+            //     {
+            //         pack_path:path.resolve(__dirname, '../../packages/'),
+            //         sidebar:{
+            //             title:'我的接口'
+            //         }
+            //     }
+            // ]
         ]
     }
 }
