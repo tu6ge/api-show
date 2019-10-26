@@ -24,22 +24,20 @@ module.exports = function(){
             
         },
         plugins: [
+            // [
+            //     '@api-show/aps',
+            //     {
+            //         pack_path:path.resolve(__dirname, '../../packages/'),
+            //         sidebar:true,
+            //     }
+            // ],
             [
-                '@api-show/aps',
+                require('./vuepress-plugin-aps/main.js'),
                 {
                     pack_path:path.resolve(__dirname, '../../packages/'),
                     sidebar:true,
                 }
             ],
-            // [
-            //     require('./vuepress-plugin-aps/main.js'),
-            //     {
-            //         pack_path:path.resolve(__dirname, '../../packages/'),
-            //         sidebar:{
-            //             title:'我的接口'
-            //         }
-            //     }
-            // ]
             [
                 '@vuepress/google-analytics',
                 {

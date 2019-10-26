@@ -521,68 +521,70 @@ export default {
  ```js
  export default {
      data(){
-         timeline:{
-            "showapi_res_code": 0,
-            "showapi_res_error": "",
-            "showapi_res_body": {
-                "dataList": [//分时线每天的数据结构
-                    {
-                        "minuteList": [//分时线数据列表
-                            {
-                                "time": "0930",//当前分钟
-                                "avgPrice": "7.55",//均价
-                                "volume": "0",//交易量
-                                "nowPrice": "7.55"//当前时间的价格
-                            },
-                            {
-                                "time": "0931",//当前分钟
-                                "avgPrice": "7.555",//均价
-                                "volume": "347785",//交易量
-                                "nowPrice": "7.56"//当前时间的价格
-                            },
-                            {
-                                "time": "0932",//当前分钟
-                                "avgPrice": "7.56",//均价
-                                "volume": "146900",//交易量
-                                "nowPrice": "7.57"//当前时间的价格
-                            },
-                            {
-                                "time": "0933",//当前分钟
-                                "avgPrice": "7.563",//均价
-                                "volume": "47800",//交易量
-                                "nowPrice": "7.57"//当前时间的价格
-                            },
-                            {
-                                "time": "0934",//当前分钟
-                                "avgPrice": "7.564",//均价
-                                "volume": "166800",//交易量
-                                "nowPrice": "7.57"//当前时间的价格
-                            },
-                            {
-                                "time": "0935",//当前分钟
-                                "avgPrice": "7.565",//均价
-                                "volume": "131200",//交易量
-                                "nowPrice": "7.57"//当前时间的价格
-                            },
-                            {
-                                "time": "0936",//当前分钟
-                                "avgPrice": "7.564",//均价
-                                "volume": "162900",//交易量
-                                "nowPrice": "7.56"//当前时间的价格
-                            } 
-                        ],
-                        "count": "242",//总条目数
-                        "yestclose": "7.55",//昨日收盘价
-                        "lastVolume": "22240988",//昨日成交量
-                        "date": "20161125"//当前日期
-                    }
-                ],
-                "ret_code": 0,
-                "market": "sh",
-                "name": "中国石油",
-                "code": "601857"
+         return {
+            timeline:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "dataList": [//分时线每天的数据结构
+                        {
+                            "minuteList": [//分时线数据列表
+                                {
+                                    "time": "0930",//当前分钟
+                                    "avgPrice": "7.55",//均价
+                                    "volume": "0",//交易量
+                                    "nowPrice": "7.55"//当前时间的价格
+                                },
+                                {
+                                    "time": "0931",//当前分钟
+                                    "avgPrice": "7.555",//均价
+                                    "volume": "347785",//交易量
+                                    "nowPrice": "7.56"//当前时间的价格
+                                },
+                                {
+                                    "time": "0932",//当前分钟
+                                    "avgPrice": "7.56",//均价
+                                    "volume": "146900",//交易量
+                                    "nowPrice": "7.57"//当前时间的价格
+                                },
+                                {
+                                    "time": "0933",//当前分钟
+                                    "avgPrice": "7.563",//均价
+                                    "volume": "47800",//交易量
+                                    "nowPrice": "7.57"//当前时间的价格
+                                },
+                                {
+                                    "time": "0934",//当前分钟
+                                    "avgPrice": "7.564",//均价
+                                    "volume": "166800",//交易量
+                                    "nowPrice": "7.57"//当前时间的价格
+                                },
+                                {
+                                    "time": "0935",//当前分钟
+                                    "avgPrice": "7.565",//均价
+                                    "volume": "131200",//交易量
+                                    "nowPrice": "7.57"//当前时间的价格
+                                },
+                                {
+                                    "time": "0936",//当前分钟
+                                    "avgPrice": "7.564",//均价
+                                    "volume": "162900",//交易量
+                                    "nowPrice": "7.56"//当前时间的价格
+                                } 
+                            ],
+                            "count": "242",//总条目数
+                            "yestclose": "7.55",//昨日收盘价
+                            "lastVolume": "22240988",//昨日成交量
+                            "date": "20161125"//当前日期
+                        }
+                    ],
+                    "ret_code": 0,
+                    "market": "sh",
+                    "name": "中国石油",
+                    "code": "601857"
+                }
             }
-        }
+         }
      }
  }
  ```
