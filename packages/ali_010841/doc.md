@@ -192,6 +192,10 @@ export default {
 
 ### 最终呈现
 
+::: warning 提示
+ 可以按价格排序
+:::
+
 <aps-ali-010841 :data="$frontmatter.zhonghang_list"  class="mt-10"  />
 
 ## 十大银行实时汇率表
@@ -253,6 +257,10 @@ export default {
 ```
 
 ### 最终呈现
+
+::: warning 提示
+ 可以按价格排序
+:::
 
 <aps-ali-010841-bank10 :data="$frontmatter.bank10"  class="mt-10"  />
 
