@@ -3,6 +3,7 @@ module.exports = function(){
     return {
         title:"api show",
         base: process.env.NODE_ENV === 'production'  ? '/api-show/':'/',
+        theme:'./theme/index.js',
         themeConfig: {
             nav: [
             { text: '首页', link: '/' },
@@ -57,7 +58,17 @@ module.exports = function(){
                     distractionFreeMode: false, // Facebook-like distraction free mode
                   },
                 },
-              ],
+            ],
+            // [   
+            //     '@vssue/vuepress-plugin-vssue',
+            //     {
+            //         platform: 'github',
+            //         owner: 'tu6ge',
+            //         repo: 'api-show',
+            //         clientId: '43c39821a12ec4b9e9ae',
+            //         clientSecret: '321c4d3ec049d4dd153cc84bfc8522720d150340',
+            //     }
+            // ]
         ]
     }
 }

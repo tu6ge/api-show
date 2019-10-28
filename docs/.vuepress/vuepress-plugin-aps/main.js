@@ -50,11 +50,7 @@ module.exports =  (options, ctx) => {
         //       path,                // 当前页面的实际链接（在 permalink 不存在时，使用 regularPath ）
         //     } = $page
 
-        //     //let preg = /```js([\r\n\s]*)export default \{([\r\n\s]*)data\(\)\{(.*)([\r\n\s]*)\}([\r\n\s]*)\}([\r\n\s]*)```/.exec(_strippedContent)
-        //     let preg = new RegExp(`\`\`\`js\r\nexport default \{\r\n(.+?)\`\`\``,'sm')
-        //     let result = preg.exec(_strippedContent)
-        
-        //     console.log(result ? result[1] :'')
+        //     $page._strippedContent = _strippedContent + '<Vssue title="Vssue Demo" />'
         // },
         async clientDynamicModules () {
             if(!options.sidebar){

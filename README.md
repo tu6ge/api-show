@@ -1,5 +1,9 @@
 # api-show
 
+快速呈现api返回的数据
+
+[帮助文档](https://tu6ge.github.io/api-show/)
+
 ## Project setup
 ```
 npm install api-show

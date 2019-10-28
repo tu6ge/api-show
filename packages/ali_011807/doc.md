@@ -97,37 +97,39 @@ export default {
 ```js
 export default {
     data(){
-        "ali_011807_channel":{
-                "status": "0",
-                "msg": "ok",
-                "result": [
-                    {
-                        "tvid": "1",
-                        "name": "中央台",
-                        "parentid": "0",
-                        "istv": "0"
-                    },
-                    {
-                        "tvid": "2381",
-                        "name": "中国美食",
-                        "parentid": "4",
-                        "istv": "1"
-                    },
-                    {
-                        "tvid": "2382",
-                        "name": "人文历史",
-                        "parentid": "4",
-                        "istv": "1"
-                    },
-                    {
-                        "tvid": "2383",
-                        "name": "中国旅游",
-                        "parentid": "4",
-                        "istv": "1"
-                    }
-                ]
-        },
-        ali_011807_channel_val:""
+        return {
+            ali_011807_channel:{
+                    "status": "0",
+                    "msg": "ok",
+                    "result": [
+                        {
+                            "tvid": "1",
+                            "name": "中央台",
+                            "parentid": "0",
+                            "istv": "0"
+                        },
+                        {
+                            "tvid": "2381",
+                            "name": "中国美食",
+                            "parentid": "4",
+                            "istv": "1"
+                        },
+                        {
+                            "tvid": "2382",
+                            "name": "人文历史",
+                            "parentid": "4",
+                            "istv": "1"
+                        },
+                        {
+                            "tvid": "2383",
+                            "name": "中国旅游",
+                            "parentid": "4",
+                            "istv": "1"
+                        }
+                    ]
+            },
+            ali_011807_channel_val:""
+        }
     },
     methods:{
         change(val){
