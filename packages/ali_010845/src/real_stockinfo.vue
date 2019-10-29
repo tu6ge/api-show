@@ -1,7 +1,7 @@
 <template>
     <div class="aps-ali-010845-real-stockinfo">
         <h2>
-          星星科技<span>(300256.SZ)</span>
+          {{stockMarket.name}}<span>({{stockMarket.code}}.{{stockMarket.market.toUpperCase()}})</span>
         </h2>
         <el-row>
             <el-col :span="8" class="text-center main">
@@ -9,7 +9,7 @@
                     <el-col :span="12" class="price ">{{stockMarket.nowPrice}}</el-col>
                     <el-col :span="4"><font class="aps-font"  :class="{'aps-font-up':isUp, 'aps-font-down':isDown}"></font></el-col>
                     <el-col :span="8" class="change">
-                        <el-row>--</el-row>
+                        <el-row>{{stockMarket.diff_money}}</el-row>
                         <el-row >{{diff_rate}}</el-row>
                     </el-col>
                 </el-row>

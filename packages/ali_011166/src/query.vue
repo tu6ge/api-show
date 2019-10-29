@@ -1,7 +1,7 @@
 <template>
      <el-table 
         border
-        height="300"
+        :height="height"
         :data="list">
         <template v-for="col in column">
             <el-table-column
@@ -33,6 +33,7 @@ export default {
                 return typeof allColumn[value] !='undefined'
             }
         },
+        height:  [String, Number],
         data:{
             type:  Object,
             required:true,

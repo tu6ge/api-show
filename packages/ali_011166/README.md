@@ -135,7 +135,7 @@ export default {
 <aps-ali-011166 :data="hkgold" type="hkgold" />
 
 <h3>货币贵金属价格查询</h3>
-<aps-ali-011166 :data="currency" type="currency" />
+<aps-ali-011166 :data="currency" :height="200" type="currency" />
 
 <h3>伦敦金银价格查询</h3>
 <aps-ali-011166 :data="london" type="london" />
@@ -147,7 +147,7 @@ export default {
 ### 最终呈现
 
 #### 上海期货交易所价格查询
-<aps-ali-011166 :data="$frontmatter.shfutures"   class="mt-10"/>
+<aps-ali-011166 :data="$frontmatter.shfutures"  class="mt-10"/>
 
 
 #### 银行账户黄金价格查询
@@ -157,10 +157,34 @@ export default {
 <aps-ali-011166 :data="$frontmatter.hkgold" type="hkgold"   class="mt-10"/>
 
 #### 货币贵金属价格查询
-<aps-ali-011166 :data="$frontmatter.currency" type="currency"   class="mt-10"/>
+::: warning 提示
+该数据设置了表格的高度，数据多的时候，会显示竖向滚动条
+:::
+<aps-ali-011166 :data="$frontmatter.currency" type="currency" :height="200"  class="mt-10"/>
 
 #### 伦敦金银价格查询
 <aps-ali-011166 :data="$frontmatter.london" type="london"   class="mt-10"/>
 
 #### 上海黄金交易所价格查询
 <aps-ali-011166 :data="$frontmatter.shgold" type="shgold"   class="mt-10"/>
+
+
+### 参数列表
+
+   
+|参数| 是否必填| 默认值| 说明 |
+|---|---|---|---|
+|type |false| shfutures | 数据类型|
+|height|false| 无 | Table 的高度，默认为自动高度。如果 height 为 number 类型，单位 px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。	|
+
+<style>
+table{
+    margin:0;
+    border-collapse: collapse;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+</style>

@@ -25,20 +25,20 @@ module.exports = function(){
             
         },
         plugins: [
-            // [
-            //     '@api-show/aps',
-            //     {
-            //         pack_path:path.resolve(__dirname, '../../packages/'),
-            //         sidebar:true,
-            //     }
-            // ],
             [
-                require('./vuepress-plugin-aps/main.js'),
+                '@api-show/aps',
                 {
                     pack_path:path.resolve(__dirname, '../../packages/'),
                     sidebar:true,
                 }
             ],
+            // [
+            //     require('./vuepress-plugin-aps/main.js'),
+            //     {
+            //         pack_path:path.resolve(__dirname, '../../packages/'),
+            //         sidebar:true,
+            //     }
+            // ],
             [
                 '@vuepress/google-analytics',
                 {
