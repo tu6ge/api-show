@@ -5,7 +5,7 @@
 </template>
 <script>
 
-export default{
+export default {
     name: "aps-ali-033200",
     props:{
         data:{
