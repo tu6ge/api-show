@@ -26,12 +26,12 @@ packages
 └---packA
 |  |--src
 |  |   └ demo.vue
-|  |--doc.md
+|  |--README.md
 |  └--index.js
 └---packB
 |  |--src
 |  |   └ demo.vue
-|  |--doc.md
+|  |--README.md
 |  └--index.js
 ```
 
@@ -89,5 +89,4 @@ pack_path是唯一的必填参数，代表所有组件所在的目录
 
 # TODO
 
-1. 把doc.md 名称改成可自定义的
-2. 判断路由是否已定义过
+1. 判断路由是否已定义过
