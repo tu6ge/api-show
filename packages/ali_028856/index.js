@@ -1,7 +1,7 @@
-import comp from './src/query.vue'
+import comp from "./src/query.vue";
 
-comp.install = function (Vue) {
-  Vue.component(comp.name, comp)
-}
+comp.install = function(Vue) {
+  Vue.component(comp.name, comp);
+};
 
-export default comp
+export default comp;
