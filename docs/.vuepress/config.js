@@ -45,31 +45,20 @@ module.exports = function(){
                   'ga': 'UA-150939145-1'
                 }
             ],
-            // [
-            //     'gitalk-maker',
-            //     {
-            //       gitalkConfig: {
-            //         clientID: '43c39821a12ec4b9e9ae',
-            //         clientSecret: '321c4d3ec049d4dd153cc84bfc8522720d150340',
-            //         repo: 'api-show',
-            //         owner: 'tu6ge',
-            //         admin: ['tu6ge'],
-            //         // id: location.pathname, // 无法配置默认用 location.pathname
-            //         distractionFreeMode: false, // Facebook-like distraction free mode
-            //       },
-            //     },
-            // ],
-            [   
-                '@vssue/vuepress-plugin-vssue',
+            [
+                'gitalk-maker',
                 {
-                    platform: 'github',
-                    owner: 'tu6ge',
-                    repo: 'api-show',
-                    clientId: '43c39821a12ec4b9e9ae',
+                  gitalkConfig: {
+                    clientID: '43c39821a12ec4b9e9ae',
                     clientSecret: '321c4d3ec049d4dd153cc84bfc8522720d150340',
-                    locale:'zh-CN',
-                }
-            ]
+                    repo: 'api-show',
+                    owner: 'tu6ge',
+                    admin: ['tu6ge'],
+                    // id: location.pathname, // 无法配置默认用 location.pathname
+                    distractionFreeMode: false, // Facebook-like distraction free mode
+                  },
+                },
+            ],
         ]
     }
 }
