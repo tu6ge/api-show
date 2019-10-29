@@ -5,10 +5,19 @@ import apishow from "../../packages/index"
 let siteData = {
 
 }
+
+import Vssue from 'vssue'
+import VssueAPI from '@vssue/api'
+
+const vpOptions = JSON.parse(VSSUE_OPTIONS);
+
+
 export default ({
     Vue, 
     siteData
   }) => {
     Vue.use(apishow)
-    //Vue.use(ali_011807)
+    Vue.use(Vssue, Object.assign({}, vpOptions, {
+      api: VssueAPI,
+    }));
   }
