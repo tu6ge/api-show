@@ -8,8 +8,7 @@
 export default {
     name: "aps-ali-033200",
     props:{
-        data:{
-            type:  Object,
+        data:{type:  Object,
             default: function () {
                 return { }
             }
