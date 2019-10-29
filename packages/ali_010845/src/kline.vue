@@ -9,7 +9,10 @@ import "echarts/lib/component/tooltip";
 import "echarts/lib/component/title";
 import "echarts/lib/component/dataZoom";
 
+import echarts_mixin from "../../mixins/echarts.js";
+
 export default {
+  mixins: [echarts_mixin],
   name: "aps-ali-010845-kline",
   components: {
     "v-chart": ECharts
@@ -89,7 +92,7 @@ export default {
             name: "K线",
             scale: true,
             max: null,
-            axisLine: { lineStyle: { color: "#8392A5" } },
+            axisLine: { lineStyle: { color: this.echarts_colors[1] } },
             splitLine: { show: false }
           },
           {
@@ -97,7 +100,7 @@ export default {
             name: "成交数",
             scale: true,
             inverse: false,
-            axisLine: { lineStyle: { color: "#5793f3" } },
+            axisLine: { lineStyle: { color: this.echarts_colors[2] } },
             splitLine: { show: false }
           }
         ],

@@ -1,5 +1,7 @@
 <template>
-  <v-chart :options="data_option" />
+  <div class="aps-ali-010845-market-history">
+    <v-chart :options="data_option" />
+  </div>
 </template>
 <script>
 //大盘历史查询
@@ -11,7 +13,10 @@ import "echarts/lib/component/tooltip";
 import "echarts/lib/component/title";
 import "echarts/lib/component/dataZoom";
 
+import echarts_mixin from "../../mixins/echarts.js";
+
 export default {
+  mixins: [echarts_mixin],
   name: "aps-ali-010845-market-history",
   components: {
     "v-chart": ECharts
@@ -90,7 +95,7 @@ export default {
             type: "value",
             scale: true,
             max: null,
-            axisLine: { lineStyle: { color: "#8392A5" } },
+            axisLine: { lineStyle: { color: this.echarts_colors[4] } },
             splitLine: { show: false }
           },
           {
@@ -98,7 +103,7 @@ export default {
             type: "value",
             scale: true,
             max: null,
-            axisLine: { lineStyle: { color: "green" } },
+            axisLine: { lineStyle: { color: this.echarts_colors[5] } },
             splitLine: { show: false }
           },
           {
@@ -106,12 +111,15 @@ export default {
             type: "value",
             scale: true,
             max: null,
+            position: "right",
+            offset: 80,
             axisLine: { lineStyle: { color: "#777" } },
             splitLine: { show: false }
           }
         ],
 
         grid: {
+          right: 150,
           bottom: 80
         },
         dataZoom: [
@@ -208,3 +216,14 @@ export default {
   }
 };
 </script>
+<!-- 样式props todo-->
+<style scoped>
+.aps-ali-010845-market-history {
+  width: 100%;
+  height: 500px;
+}
+.echarts {
+  width: 100%;
+  height: 100%;
+}
+</style>
