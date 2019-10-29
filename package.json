@@ -12,10 +12,10 @@
     "lib": "vue-cli-service build --target lib --name apishow --dest lib packages/index.js",
     "docs:dev": "cross-env NODE_ENV=development vuepress dev docs",
     "docs:build": "cross-env NODE_ENV=production vuepress build docs",
-    "precommit": "echo 21333 && lint-staged"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
-    "packages/*.js": "eslint"
+    "packages/*/*.js": "eslint"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
@@ -31,6 +31,7 @@
     "cross-env": "^6.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "mini-css-extract-plugin": "^0.8.0",
     "vue-template-compiler": "^2.6.10",
