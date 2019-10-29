@@ -15,7 +15,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "packages/*/*.js": "eslint"
+    "packages/*.js": "eslint"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
