@@ -15,8 +15,8 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "packages/*.js": ["prettier --write", "git add"],
-    "packages/*.vue": ["prettier --write", "git add"]
+    "packages/**/*.js": ["prettier --write", "git add"],
+    "packages/**/*.vue": ["prettier --write", "git add"]
   },
   "peerDependencies": {
     "vue": "^2.6.10"
