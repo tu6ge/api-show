@@ -12,7 +12,7 @@
     "lib": "vue-cli-service build --target lib --name apishow --dest lib packages/index.js",
     "docs:dev": "cross-env NODE_ENV=development vuepress dev docs",
     "docs:build": "cross-env NODE_ENV=production vuepress build docs",
-    "precommit": "lint-staged"
+    "precommit": "echo 21333 && lint-staged"
   },
   "lint-staged": {
     "packages/*.js": "eslint"
