@@ -1,8 +1,10 @@
-# 方便编写vue组件库文档的vuepress插件
+# A vuepress plug-in for writing Vue component library documents
 
+[中文文档](https://github.com/tu6ge/api-show/blob/master/docs/.vuepress/vuepress-plugin-aps/README-zh.md)
 
-在编写vue组件库的时候，并使用vuepress进行文档编写的时候
-目录结构一般是这样的
+When writing the Vue component library and using vuepress for document writing
+
+The directory structure is generally like this
 
 ```
 docs
@@ -19,7 +21,8 @@ packages
 |  └--index.js
 ```
 
-当组件比较多是时候，我们会发现，组件代码和对应的文档md文件，距离比较远，不方便维护，所以我们期望的目录结构是如下这样的
+When there are many components, we will find that the component code and the corresponding document MD file are far away from each other and are not easy to maintain. Therefore, our expected directory structure is as follows
+
 
 ```
 packages
@@ -35,11 +38,17 @@ packages
 |  └--index.js
 ```
 
-因为原生的vuepress规则，要求把所有的md文件写在docs目录下，vuepress可以将md文件自动注册成路由.
-开发者可以根据自己的需要，把对应的路由放到顶部导航或者左侧导航
+Because of the native rules of vuepress, it is required to write all MD files in the docs directory. Vuepress can automatically register MD files as routes.
 
-为了实现这个上面说到的目录结构，我们需要使用插件去对vuepress 做一些设置，
-于是本插件就此诞生了
+Developers can put the corresponding route to the top navigation or left navigation according to their own needs
+
+
+
+In order to implement the above directory structure, we need to use plug-ins to make some settings for vuepress
+
+
+So this plugin was born
+
 
 ## Requirement
 
@@ -54,7 +63,8 @@ npm i -D @api-show/vuepress-plugin-aps
 
 ## Usage
 
-在docs/.vuepress/config.js 中安装组件
+
+Install this plugin in docs/.vuepress/config.js
 
 ```js
 const path = require('path')
@@ -62,12 +72,12 @@ module.exports = function(){
     return {
         plugins: [
             '@api-show/aps',
-            //或者 '@api-show/vuepress-plugin-aps',
+            //Or '@api-show/vuepress-plugin-aps',
             {
-                pack_path:path.resolve(__dirname, '../../packages/'), //指定组件所在目录
+                pack_path:path.resolve(__dirname, '../../packages/'), //Specify the directory where the component is located
                 //sidebar:'true',
-                //或 sidebar:{
-                //    title:'接口列表'
+                //Or sidebar:{
+                //    title:'Api List'
                 //}
             }
         ]
@@ -75,18 +85,11 @@ module.exports = function(){
 }
 ```
 
-pack_path是唯一的必填参数，代表所有组件所在的目录
+`pack_path` is the only required parameter, which represents the directory of all components
 
-该组件除了可以把文档路由注入到vuepress外，
+Other If you set a parameter 'sidebar' to make it equal to 'true'`
 
-如果你设置了一个参数`sidebar`使它等于 `true`
+A group "plugins list" will also be added to the menu on the left side of the document
 
-还会在文档左侧菜单里加上一个分组“接口列表”
 
-插件会把所有组件的文档放到这个分组下面构成文档目录
-
-如果你想修改分组的名称，也是可以的，只需要在`sidebar`中设置一个`title`参数即可自定义
-
-# TODO
-
-1. 判断路由是否已定义过
+If you want to change the name of the group, you can also customize it by setting a `title` parameter in `sidebar`
