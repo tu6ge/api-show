@@ -1,4 +1,4 @@
-# A vuepress plug-in for writing Vue component library documents
+# A vuepress plugin for writing Vue component library documents
 
 [中文文档](https://github.com/tu6ge/api-show/blob/master/docs/.vuepress/vuepress-plugin-aps/README-zh.md)
 
@@ -44,7 +44,7 @@ Developers can put the corresponding route to the top navigation or left navigat
 
 
 
-In order to implement the above directory structure, we need to use plug-ins to make some settings for vuepress
+In order to implement the above directory structure, we need to use plugin to make some settings for vuepress
 
 
 So this plugin was born
