@@ -271,6 +271,24 @@ real_stockinfo:
       tradeNum: '0', code: HSI, maxPrice: '24276.311', nowPrice: '24029.910', min52: '19594.609',
       time: '2017-04-18 11:11:48', name: 恒生指数, tradeAmount: '29530142.152', swing: '1.1330',
       todayOpenPrice: '24268.170', diff_rate: '-0.960', minPrice: '24001.430'}
+timeline_k:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    dataList:
+    - {min: '14.910', open: '14.910', volumn: '53486.000', time: '20161110', max: '15.320',
+      close: '15.170'}
+    - {min: '14.680', open: '15.040', volumn: '57193.000', time: '20161109', max: '15.070',
+      close: '14.830'}
+    - {min: '14.850', open: '14.880', volumn: '48127.000', time: '20161108', max: '15.090',
+      close: '15.050'}
+    - {min: '14.580', open: '14.640', volumn: '44579.000', time: '20161107', max: '14.860',
+      close: '14.840'}
+    ret_code: 0
+    market: sh
+    count: '8'
+    name: 白云机场
+    code: '600004'
 
 ---
 # 股票行情
@@ -688,7 +706,67 @@ export default {
 
  ## 股票K线数据
 
-计划中
+### 数据准备
+
+```js
+export default {
+    data(){
+        return {
+            timeline_k:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "dataList": [//k线数据结构
+                        {
+                            "min": "14.910",//时间区间内最小的价格
+                            "open": "14.910",//时间区间开始的价格
+                            "volumn": "53486.000",//时间区间成交手数总合
+                            "time": "20161110",//时间点，5分|30分|60分k线时，此时间返回到分钟级别。day|week|month的k线时，时间返回到天级别。
+                            "max": "15.320",//时间区间内最高的价格
+                            "close": "15.170"//时间区间结束的价格
+                        },
+                        {
+                            "min": "14.680",
+                            "open": "15.040",
+                            "volumn": "57193.000",
+                            "time": "20161109",
+                            "max": "15.070",
+                            "close": "14.830"
+                        },
+                        {
+                            "min": "14.850",
+                            "open": "14.880",
+                            "volumn": "48127.000",
+                            "time": "20161108",
+                            "max": "15.090",
+                            "close": "15.050"
+                        },
+                        {
+                            "min": "14.580",
+                            "open": "14.640",
+                            "volumn": "44579.000",
+                            "time": "20161107",
+                            "max": "14.860",
+                            "close": "14.840"
+                        } 
+                    ],
+                    "ret_code": 0,
+                    "market": "sh",
+                    "count": "8",
+                    "name": "白云机场",
+                    "code": "600004"
+                }
+            }
+        }
+    }
+}
+```
+### html代码
+```html
+<aps-ali-010845-timeline-k :data="timeline_k" />
+```
+### 最终展示
+<aps-ali-010845-timeline-k :data="$frontmatter.timeline_k" class="mt-10"  />
 
 ## 股票行情_批量
 
