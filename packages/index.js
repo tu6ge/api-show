@@ -17,6 +17,8 @@ const components = [
   ali_010845.index_timeline,
   ali_010845.real_stockinfo,
   ali_010845.realtime_k,
+  ali_010845.sz_sh_stock_history,
+  ali_010845.stockindexsearch,
   ali_011033,
   ali_011150,
   ali_011150.detail,

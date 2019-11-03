@@ -289,6 +289,29 @@ timeline_k:
     count: '8'
     name: 白云机场
     code: '600004'
+sz_sh_stock_history:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    ret_code: 0
+    list:
+    - {min_price: '11.510', market: sh, trade_num: '17541504', trade_money: '215834624',
+      close_price: '12.480', open_price: '11.700', code: '600004', max_price: '12.700',
+      date: '2015-09-02'}
+    - {min_price: '11.920', market: sh, trade_num: '8111935', trade_money: '99310240',
+      close_price: '12.110', open_price: '12.680', code: '600004', max_price: '12.680',
+      date: '2015-09-01'}
+stockindexsearch:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    allPages: 6
+    contentlist:
+    - {market: sh, name: 港中小企, code: '000867', pinyin: gzxq}
+    - {market: sh, name: HK银行, code: '000869', pinyin: hkyx}
+    currentPage: 1
+    allNum: 296
+    maxResult: 50
 
 ---
 # 股票行情
@@ -768,21 +791,121 @@ export default {
 ### 最终展示
 <aps-ali-010845-timeline-k :data="$frontmatter.timeline_k" class="mt-10"  />
 
-## 股票行情_批量
-
-计划中
-
-## 港股板块列表
-
-计划中
 
 ## 沪深及港股历史行情
 
-计划中
+### 数据准备
+```js 
+export default {
+    data(){
+        return {
+            sz_sh_stock_history:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "ret_code": 0,
+                    "list": [//历史记录的列表
+                        {
+                            "min_price": "11.510",//最低价
+                            "market": "sh",//市场，例如sh
+                            "trade_num": "17541504",//交易手数
+                            "trade_money": "215834624",//交易金额元
+                            "close_price": "12.480",//收盘价
+                            "open_price": "11.700",//开盘价
+                            "code": "600004",//股票代码
+                            "max_price": "12.700",//最高价
+                            "date": "2015-09-02"//日期，例如2015-09-02
+                        },
+                        {
+                            "min_price": "11.920",//最低价
+                            "market": "sh",//市场，例如sh
+                            "trade_num": "8111935",//交易手数
+                            "trade_money": "99310240",//交易金额元
+                            "close_price": "12.110",//收盘价
+                            "open_price": "12.680",//开盘价
+                            "code": "600004",//股票代码
+                            "max_price": "12.680",//最高价
+                            "date": "2015-09-01"//日期，例如2015-09-02
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+```
+
+### html代码
+```html
+<aps-ali-010845-sz-sh-stock-history :data="sz_sh_stock_history" />
+```
+### 最终展示
+<aps-ali-010845-sz-sh-stock-history :data="$frontmatter.sz_sh_stock_history" class="mt-10"  />
 
 ## 大盘股指列表查询
 
-计划中
+### 数据准备
+```js 
+export default {
+    data(){
+        return {
+            stockindexsearch:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "allPages": 6,
+                    "contentlist": [
+                        {
+                            "market": "sh",//市场简写
+                            "name": "港中小企",//股票名称
+                            "code": "000867",//编码
+                            "pinyin": "gzxq"//拼音首字母
+                        },
+                        {
+                            "market": "sh",//市场简写
+                            "name": "HK银行",//股票名称
+                            "code": "000869",//编码
+                            "pinyin": "hkyx"//拼音首字母
+                        } 
+                    ],
+                    "currentPage": 1,
+                    "allNum": 296,
+                    "maxResult": 50
+                }
+            }
+        }
+    }
+}
+```
+
+### html代码
+```html
+<aps-ali-010845-stockindexsearch :data="stockindexsearch" />
+
+<!--不显示翻页-->
+<aps-ali-010845-stockindexsearch :data="stockindexsearch" :showPage="false" />
+
+<!--切换页码事件-->
+<aps-ali-010845-stockindexsearch :data="stockindexsearch" @current-change="changePage" />
+<script>
+function changePage(page){
+    alert(page);
+}
+</script>
+```
+### 最终展示
+<aps-ali-010845-stockindexsearch :data="$frontmatter.stockindexsearch" class="mt-10"  />
+
+### 参数列表
+
+| 参数| 类型| 说明|
+|---|---|---|
+|showPage| boolean | 是否显示分页，默认true|
+
+### 事件
+| 事件名称| 说明| 回调参数|
+|---|---|---|
+|current-change|当前页码改变时会触发	| 当前页码|
 
 ## 查询港股板块中的股票列表
 
