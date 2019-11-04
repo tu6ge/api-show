@@ -312,6 +312,65 @@ stockindexsearch:
     currentPage: 1
     allNum: 296
     maxResult: 50
+hk_in_block:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    ret_code: 0
+    pagebean:
+      allPages: 1
+      contentlist:
+      - {totalcapital_val: '10129054.8192', market: hk, currcapital_val: '10129054.8192',
+        name: 新世界发展, code: '00017'}
+      - {totalcapital_val: '7010820.47', market: hk, currcapital_val: '7010820.47',
+        name: 太古A, code: '00019'}
+      name: 恒生行业>综合企业
+      currentPage: 1
+      allNum: 24
+      maxResult: 40
+      typeId: hk_hshy800
+stock_in_block:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    ret_code: 0
+    pagebean:
+      allPages: 1
+      contentlist:
+      - {totalcapital_val: '10129054.8192', market: hk, currcapital_val: '10129054.8192',
+        name: 新世界发展, code: '00017'}
+      - {totalcapital_val: '7010820.47', market: hk, currcapital_val: '7010820.47',
+        name: 太古A, code: '00019'}
+      name: 恒生行业>综合企业
+      currentPage: 1
+      allNum: 24
+      maxResult: 40
+      typeId: hk_hshy800
+stop_start_divide:
+  showapi_res_code: 0
+  showapi_res_error: ''
+  showapi_res_body:
+    date: '2017-04-18'
+    ret_code: 0
+    stopList:
+    - {reason: 重大事项, name: 东旭蓝天, code: '000040'}
+    recoverList:
+    - {reason: 重大事项, name: 中基健康, code: '000972'}
+    startList:
+    - {reason: '发行数量5550万股,发行价格人民币5.48元/股,发行市盈率21.92倍,本次流通数量5550万股', name: 今飞凯达, code: '002863'}
+    newStockNetPublishList:
+    - {reason: '发行数量7685万股,发行价格人民币19.92元/股,发行市盈率22.99倍,网下询价发行,申购代码002867\002867',
+      name: 周大生, code: '002867'}
+    stockholderList:
+    - {reason: 2016年度股东大会, name: 深深房Ａ, code: '000029'}
+    addNewStockNetPublishList:
+    - {reason: '发行数量2956.9706万股,发行价格人民币70.63元/股', name: 天神娱乐, code: '002354'}
+    shareRegistList:
+    - {reason: 10派0.8元, name: 贵州百灵, code: '002424'}
+    shareDividendList:
+    - {reason: 10转增10股派1元, name: 京蓝科技, code: '000711'}
+    stockAlarmList:
+    - {reason: '*ST,最近两年净利润均为负', name: 中基健康, code: '000972'}
 
 ---
 # 股票行情
@@ -909,17 +968,174 @@ function changePage(page){
 
 ## 查询港股板块中的股票列表
 
-计划中
+### 数据准备
+```js 
+export default {
+    data(){
+        return {
+            hk_in_block:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                    "ret_code": 0,
+                    "pagebean": {
+                    "allPages": 1,
+                    "contentlist": [
+                        {
+                        "totalcapital_val": "10129054.8192", //总市值，万元
+                        "market": "hk",
+                        "currcapital_val": "10129054.8192",  //流通市值，万元
+                        "name": "新世界发展",
+                        "code": "00017"
+                        },
+                        {
+                        "totalcapital_val": "7010820.47",
+                        "market": "hk",
+                        "currcapital_val": "7010820.47",
+                        "name": "太古A",
+                        "code": "00019"
+                        } 
+                    ],
+                    "name": "恒生行业>综合企业",
+                    "currentPage": 1,
+                    "allNum": 24,
+                    "maxResult": 40,
+                    "typeId": "hk_hshy800"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+### html代码
+```html
+<aps-ali-010845-hk-in-block :data="hk_in_block" />
+
+<!--不显示翻页-->
+<aps-ali-010845-hk-in-block :data="hk_in_block" :showPage="false" />
+
+<!--切换页码事件-->
+<aps-ali-010845-hk-in-block :data="hk_in_block" @current-change="changePage" />
+<script>
+function changePage(page){
+    alert(page);
+}
+</script>
+```
+### 最终展示
+<aps-ali-010845-hk-in-block :data="$frontmatter.hk_in_block" class="mt-10"  />
+
+### 参数列表
+
+| 参数| 类型| 说明|
+|---|---|---|
+|showPage| boolean | 是否显示分页，默认true|
+
+### 事件
+| 事件名称| 说明| 回调参数|
+|---|---|---|
+|current-change|当前页码改变时会触发	| 当前页码|
 
 ## 查询沪深板块中的股票列表
 
-计划中
+::: warning 提示
+由于数据格式跟港股板块中的股票列表一样，可以使用 aps-ali-010845-hk-in-block
+:::
 
 ## 当日除权停复牌上市股票
 
-计划中
+### 准备数据
 
-
+```js 
+export default {
+    data(){
+        return {
+            stop_start_divide:{
+                "showapi_res_code": 0,
+                "showapi_res_error": "",
+                "showapi_res_body": {
+                "date": "2017-04-18",
+                "ret_code": 0,
+                "stopList": [ //停牌股票列表
+                    {
+                        "reason": "重大事项",  //原因
+                        "name": "东旭蓝天",    //股票名称
+                        "code": "000040"       //股票编码
+                    } 
+                ],
+                "recoverList": [ //复牌股票列表
+                    {
+                        "reason": "重大事项",
+                        "name": "中基健康",
+                        "code": "000972"
+                    } 
+                ],
+                "startList": [ //首发上市股票列表
+                    {
+                        "reason": "发行数量5550万股,发行价格人民币5.48元/股,发行市盈率21.92倍,本次流通数量5550万股",
+                        "name": "今飞凯达",
+                        "code": "002863"
+                    } 
+                ],
+                "newStockNetPublishList": [ //首发新股网上发行列表
+                    {
+                        "reason": "发行数量7685万股,发行价格人民币19.92元/股,发行市盈率22.99倍,网下询价发行,申购代码002867\\002867",
+                        "name": "周大生",
+                        "code": "002867"
+                    }
+                    ],
+                    "stockholderList": [  //股东资格登记日列表
+                    {
+                        "reason": "2016年度股东大会",
+                        "name": "深深房Ａ",
+                        "code": "000029"
+                    } 
+                    ],
+                    
+                    "addNewStockNetPublishList": [  //增发新股上市列表
+                    {
+                        "reason": "发行数量2956.9706万股,发行价格人民币70.63元/股",
+                        "name": "天神娱乐",
+                        "code": "002354"
+                    }
+                    ],
+                    
+                    "shareRegistList": [ //分红转增股权登记列表
+                    {
+                        "reason": "10派0.8元",
+                        "name": "贵州百灵",
+                        "code": "002424"
+                    } 
+                    ],
+                    "shareDividendList": [  //除权除息列表
+                    {
+                        "reason": "10转增10股派1元",
+                        "name": "京蓝科技",
+                        "code": "000711"
+                    } 
+                    ],
+                    "stockAlarmList": [//退市风险警示列表
+                    {
+                        "reason": "*ST,最近两年净利润均为负",
+                        "name": "中基健康",
+                        "code": "000972"
+                    }
+                    ] 
+                
+                }
+                }
+        }
+    }
+}
+```
+### html代码
+```html
+<aps-ali-010845-stop-start-divide :data="stop_start_divide" />
+```
+### 最终展示
+<aps-ali-010845-stop-start-divide :data="$frontmatter.stop_start_divide" class="mt-10"  />
 
  <style>
 table{
