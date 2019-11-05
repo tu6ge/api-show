@@ -26,6 +26,9 @@
     "packages/*.vue": [
       "prettier --write",
       "git add"
+    ],
+    "packages/*.md": [
+      "git add"
     ]
   },
   "peerDependencies": {
