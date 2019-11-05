@@ -19,15 +19,11 @@
     }
   },
   "lint-staged": {
-    "packages/index.js": [
+    "packages/*.js": [
       "prettier --write",
       "git add"
     ],
-    "packages/**/*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "packages/**/**/*.vue": [
+    "packages/*.vue": [
       "prettier --write",
       "git add"
     ]
