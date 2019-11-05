@@ -19,6 +19,8 @@ const components = [
   ali_010845.realtime_k,
   ali_010845.sz_sh_stock_history,
   ali_010845.stockindexsearch,
+  ali_010845.hk_in_block,
+  ali_010845.stop_start_divide,
   ali_011033,
   ali_011150,
   ali_011150.detail,
