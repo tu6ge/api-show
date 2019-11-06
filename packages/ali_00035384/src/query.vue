@@ -3,7 +3,7 @@
         <el-row class="now" v-if="now">
             <el-col :span='12'>
                 <el-row class="weather-code">
-                    <img src="./assets/icon2/12.png" />
+                    <img :src="weather_img" />
                      <!-- <img :src="'./assets/icon2/'+ now.detail.weather_code+ '.png'" /> -->
                 </el-row>
                 <el-row class="temperature-box">
@@ -68,7 +68,7 @@ export default {
             }
         },
         weather_img(){
-            return './assets/icon2/12.png'
+            return require('./assets/icon2/'+this.now.detail.weather_code+'.png')
         }
     }
 }
