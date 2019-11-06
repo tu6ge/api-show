@@ -6,6 +6,7 @@ import ali_011166 from "./ali_011166";
 import ali_011807 from "./ali_011807";
 import ali_026963 from "./ali_026963";
 import ali_031829 from "./ali_031829";
+import ali_00035384 from "./ali_00035384";
 
 // 存储组件列表
 const components = [
@@ -29,7 +30,8 @@ const components = [
   ali_011807,
   ali_011807.channel,
   ali_026963,
-  ali_031829
+  ali_031829,
+  ali_00035384
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -56,7 +58,8 @@ export {
   ali_011166,
   ali_011807,
   ali_026963,
-  ali_031829
+  ali_031829,
+  ali_00035384
 };
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
