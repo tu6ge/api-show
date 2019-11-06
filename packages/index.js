@@ -4,6 +4,7 @@ import ali_011033 from "./ali_011033";
 import ali_011150 from "./ali_011150";
 import ali_011166 from "./ali_011166";
 import ali_011807 from "./ali_011807";
+import ali_026963 from "./ali_026963";
 import ali_031829 from "./ali_031829";
 
 // 存储组件列表
@@ -27,6 +28,7 @@ const components = [
   ali_011166,
   ali_011807,
   ali_011807.channel,
+  ali_026963,
   ali_031829
 ];
 
@@ -53,6 +55,7 @@ export {
   ali_011150,
   ali_011166,
   ali_011807,
+  ali_026963,
   ali_031829
 };
 export default {
