@@ -1,4 +1,5 @@
 import ali_010841 from "./ali_010841";
+import ali_010843 from "./ali_010843";
 import ali_010845 from "./ali_010845";
 import ali_011033 from "./ali_011033";
 import ali_011150 from "./ali_011150";
@@ -12,6 +13,7 @@ import ali_00035384 from "./ali_00035384";
 const components = [
   ali_010841,
   ali_010841.bank10,
+  ali_010843,
   ali_010845,
   ali_010845.kline,
   ali_010845.market_history,
@@ -52,6 +54,7 @@ export {
   apishow,
   // 以下是具体的组件列表
   ali_010841,
+  ali_010843,
   ali_010845,
   ali_011033,
   ali_011150,

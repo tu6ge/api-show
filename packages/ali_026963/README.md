@@ -88,12 +88,12 @@ export default {
 ### html代码
 
 ```html
-<aps-ali-026963 :data="data" />
+<aps-ali-026963 :data="data" style="width: 400px"/>
 ```
 
 ### 最终呈现
 
-<aps-ali-026963  :data="$frontmatter.data"  class="mt-10" :class="{'arrive':$frontmatter.data.state==3}" />
+<aps-ali-026963  :data="$frontmatter.data"  class="mt-10" :class="{'arrive':$frontmatter.data.state==3}" style="width: 400px"/>
 
 <style>
 .van-steps h3{

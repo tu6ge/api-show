@@ -1,7 +1,7 @@
 <template>
     <div >
         
-        <a-card :title="data.result.name" style="width: 300px">
+        <a-card :title="data.result.name" >
             <a href="#" slot="extra" >
                 {{data.result.date}}
             </a>

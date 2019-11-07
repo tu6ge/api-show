@@ -1,7 +1,7 @@
 <template>
   <div class="aps-ali-011033">
     <template v-if="isOne">
-      <a-card :title="info.ct" style="width: 300px">
+      <a-card :title="info.ct">
         <div slot="extra">
           {{ info.prov }}
         </div>

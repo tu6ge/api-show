@@ -73,7 +73,7 @@ ali_011807_channel:
 ### 使用组件展示
 
 ```html
- <aps-ali-011807  :data="ali_011807" ></aps-ali-011807> 
+ <aps-ali-011807  :data="ali_011807" style="width: 300px"></aps-ali-011807> 
 ```
 ```js
 export default {
@@ -87,7 +87,7 @@ export default {
 
 ### 最终的展示效果
 
- <aps-ali-011807  :data="$frontmatter.ali_011807" class="mt-10"></aps-ali-011807> 
+ <aps-ali-011807  :data="$frontmatter.ali_011807" class="mt-10" style="width: 300px"></aps-ali-011807> 
 
  ## 电视频道查询接口
 

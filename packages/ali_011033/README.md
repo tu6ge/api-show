@@ -84,7 +84,10 @@ export default {
 ### html代码
 
 ```html 
+<!--多条数据-->
 <aps-ali-011033 :data="data" />
+<!--一条数据-->
+<aps-ali-011033 :data="data"  style="width: 300px"/>
 ```
 
 ## 最终呈现--多条数据
@@ -98,7 +101,7 @@ export default {
 ## 最终呈现--一条数据
 
 
-<aps-ali-011033 :data="$frontmatter.data_one"  class="mt-10"  />
+<aps-ali-011033 :data="$frontmatter.data_one"  class="mt-10"   style="width: 300px" />
 
  <style>
 table{

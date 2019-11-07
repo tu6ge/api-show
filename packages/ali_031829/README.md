@@ -54,14 +54,14 @@ export default {
 2. 页面呈现
 ```html
 <!-- 默认只显示 省市区三项 -->
- <aps-ali-031829  :data="query_data"  ></aps-ali-031829> 
+ <aps-ali-031829  :data="query_data"  style="width: 300px"></aps-ali-031829> 
 <!--如果要显示国家，可这样设置-->
- <aps-ali-031829  :data="query_data"  :show-country="true"></aps-ali-031829> 
+ <aps-ali-031829  :data="query_data" style="width: 300px"  :show-country="true"></aps-ali-031829> 
 ```
 
 ### 最终的展示效果
 
-<aps-ali-031829  :data="$frontmatter.query_data"  class="mt-10" :show-country="true"></aps-ali-031829> 
+<aps-ali-031829  :data="$frontmatter.query_data"  class="mt-10" :show-country="true" style="width: 300px"></aps-ali-031829> 
 
 ## 参数列表
 
