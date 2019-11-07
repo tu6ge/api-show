@@ -1,6 +1,6 @@
 {
   "name": "api-show",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "api ui",
   "private": false,
   "main": "lib/apishow.umd.min.js",
@@ -53,6 +53,7 @@
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.1.0",
     "vuepress-plugin-gitalk-maker": "^0.1.0",
+    "vuepress-plugin-sitemap": "^2.3.0",
     "yaml": "^1.7.2"
   },
   "eslintConfig": {
