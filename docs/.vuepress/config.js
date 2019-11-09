@@ -59,13 +59,13 @@ module.exports = function(){
                   },
                 },
             ],
-            //有待解决bug 
-            // [
-            //     'sitemap',
-            //     {
-            //         hostname: 'https://tu6ge.github.io'
-            //     }
-            // ]
+            [
+                'sitemap',
+                {
+                    hostname: 'https://tu6ge.github.io/api-show/',
+                    exclude:['/404.html']
+                }
+            ]
         ]
     }
 }
