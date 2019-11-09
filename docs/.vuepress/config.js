@@ -39,6 +39,7 @@ module.exports = function(){
             //         sidebar:true,
             //     }
             // ],
+            [require('./vuepress-plugin-routes/main.js')],
             [
                 '@vuepress/google-analytics',
                 {
