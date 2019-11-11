@@ -11,7 +11,8 @@
     "inspect": "vue-cli-service inspect",
     "lib": "vue-cli-service build --target lib --name apishow --dest lib packages/index.js",
     "docs:dev": "cross-env NODE_ENV=development vuepress dev docs",
-    "docs:build": "cross-env NODE_ENV=production vuepress build docs"
+    "docs:build": "cross-env NODE_ENV=production vuepress build docs",
+    "docs:serve": "cross-env NODE_ENV=development vuepress serve docs"
   },
   "husky": {
     "hooks": {
@@ -53,6 +54,7 @@
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.1.0",
     "vuepress-plugin-gitalk-maker": "^0.1.0",
+    "vuepress-plugin-serve": "^1.1.0",
     "vuepress-plugin-sitemap": "2.3.1",
     "yaml": "^1.7.2"
   },

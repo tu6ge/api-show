@@ -66,7 +66,18 @@ module.exports = function(){
                     hostname: 'https://tu6ge.github.io/api-show/',
                     exclude:['/404.html']
                 }
-            ]
+            ],
+            // [
+            //     'vuepress-plugin-serve',
+            //     {
+            //         port: 1234,
+            //         beforeServer(app, server) {
+            //           app.get('/custom', function(req, res) {
+            //             res.json({ custom: 'response' })
+            //           })
+            //         },
+            //     },
+            // ]
         ]
     }
 }

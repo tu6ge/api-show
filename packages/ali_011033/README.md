@@ -103,7 +103,7 @@ export default {
 
 <aps-ali-011033 :data="$frontmatter.data_one"  class="mt-10"   style="width: 300px" />
 
- <style>
+<style>
 table{
     margin:0 !important;
     border-collapse: collapse;
