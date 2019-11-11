@@ -1142,7 +1142,7 @@ export default {
 
  <style>
 table{
-    margin:0;
+    margin:0 !important;
     border-collapse: collapse;
 }
 thead {
