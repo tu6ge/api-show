@@ -103,4 +103,13 @@ export default {
 .aps-ali-010843 h1{
     color:#fff;
 }
+table{
+    margin:0 !important;
+    border-collapse: collapse;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
 </style>
