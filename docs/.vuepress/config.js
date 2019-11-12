@@ -24,6 +24,17 @@ module.exports = function(){
             editLinkText: '帮助我们改善此页面！',
             
         },
+        // configureWebpack: (config, isServer) => {
+        //     return {
+        //         devServer: {
+        //             before: function(app, server, compiler) {
+        //                 app.get('/some/path', function(req, res) {
+        //                     res.json({ custom: 'response' });
+        //                 });
+        //             }
+        //         }
+        //     }
+        // },
         plugins: [
             [
                 '@api-show/aps',
@@ -70,10 +81,11 @@ module.exports = function(){
             // [
             //     'vuepress-plugin-serve',
             //     {
-            //         port: 1234,
             //         beforeServer(app, server) {
             //           app.get('/custom', function(req, res) {
+            //               console.log('aaaaaa')
             //             res.json({ custom: 'response' })
+            //             res.end()
             //           })
             //         },
             //     },
