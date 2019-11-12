@@ -31,7 +31,7 @@ npm i -S api-show
 </head>
 <body>
   <div id="app">
-      <aps-ali-011807  :data="ali_011807" ></aps-ali-011807> 
+      <aps-ali-011807  :data="ali_011807" style="width: 300px"></aps-ali-011807> 
   </div>
 </body>
   <!-- import Vue before Element -->

@@ -1,6 +1,6 @@
 {
   "name": "api-show",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "description": "api ui",
   "private": false,
   "main": "lib/apishow.umd.min.js",
@@ -9,7 +9,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "inspect": "vue-cli-service inspect",
-    "lib": "vue-cli-service build --target lib --name apishow --dest lib packages/index.js",
+    "lib": "cross-env NODE_ENV=production vue-cli-service build --target lib --name apishow --dest lib packages/index.js",
+    "pub":"npm run lib && npm publish",
     "docs:dev": "cross-env NODE_ENV=development vuepress dev docs",
     "docs:build": "cross-env NODE_ENV=production vuepress build docs",
     "docs:serve": "cross-env NODE_ENV=development vuepress serve docs"
