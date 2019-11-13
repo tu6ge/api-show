@@ -19,3 +19,7 @@ footer: MIT Licensed | Copyright © 2019
 ```js
 npm i api-show
 ```
+
+## github项目
+
+如果该项目提高了你的工作效率，给个 <github-button href="https://github.com/tu6ge/api-show" data-icon="octicon-star" data-show-count="false" aria-label="Star tu6ge/api-show on GitHub">Star</github-button> 鼓励一下作者吧
