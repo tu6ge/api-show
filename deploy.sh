@@ -3,6 +3,10 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+
+# 升级api-show到最新版
+yarn add api-show@latest
+
 # 生成静态文件
 npm run docs:build
 

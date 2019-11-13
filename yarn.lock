@@ -1578,6 +1578,19 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+api-show@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.npm.taobao.org/api-show/download/api-show-0.1.15.tgz#9b1320b376f733c7adaf4c49f4612275fa025b6c"
+  integrity sha1-mxMgs3b3M8etr0xJ9GEidfoCW2w=
+  dependencies:
+    ant-design-vue "^1.4.0"
+    echarts "^4.4.0"
+    element-ui "^2.12.0"
+    sass "^1.23.1"
+    sass-loader "^8.0.0"
+    vant "^2.2.6"
+    vue-echarts "^4.0.4"
+
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/aproba/download/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"

@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import apishow from "../../packages/index"
+import apishow from 'api-show'
+import local_apishow from "../../packages/index"
 import GithubButton from 'vue-github-button'
-// import {ali_011807} from "../../packages/index"
-// console.log(ali_011807)
+
 let siteData = {
 
 }
@@ -13,6 +13,11 @@ export default ({
     Vue, 
     siteData
   }) => {
-    Vue.use(apishow)
+      if(process.env.NODE_ENV !== 'production'){
+          Vue.use(local_apishow)
+      }else{
+        Vue.use(apishow)
+      }
+    
     Vue.component(GithubButton.name, GithubButton)
   }
