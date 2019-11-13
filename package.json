@@ -31,6 +31,13 @@
     ],
     "packages/*.md": [
       "git add"
+    ],
+    "docs/*.js":[
+      "prettier --write",
+      "git add"
+    ],
+    "docs/*.md": [
+      "git add"
     ]
   },
   "peerDependencies": {
