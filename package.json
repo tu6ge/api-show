@@ -13,7 +13,8 @@
     "pub": "npm run lib && npm version patch &&  npm publish",
     "docs:dev": "cross-env NODE_ENV=development vuepress dev docs",
     "docs:build": "cross-env NODE_ENV=production vuepress build docs",
-    "docs:serve": "cross-env NODE_ENV=development vuepress serve docs"
+    "docs:serve": "cross-env NODE_ENV=development vuepress serve docs",
+    "postversion": "git push --follow-tags"
   },
   "husky": {
     "hooks": {
