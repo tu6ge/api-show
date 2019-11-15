@@ -9,3 +9,4 @@ vue.config.js
 babel.config.js
 package-lock.json
 *.map
+deploy.sh
