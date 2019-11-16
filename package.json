@@ -1,6 +1,6 @@
 {
   "name": "api-show",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "api ui",
   "private": false,
   "main": "lib/apishow.umd.min.js",
