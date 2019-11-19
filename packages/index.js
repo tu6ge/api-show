@@ -6,6 +6,7 @@ import ali_011150 from "./ali_011150";
 import ali_011166 from "./ali_011166";
 import ali_011256 from "./ali_011256";
 import ali_011807 from "./ali_011807";
+import ali_011811 from "./ali_011811";
 import ali_026963 from "./ali_026963";
 import ali_031829 from "./ali_031829";
 import ali_00035384 from "./ali_00035384";
@@ -33,6 +34,7 @@ const components = [
   ali_011256,
   ali_011807,
   ali_011807.channel,
+  ali_011811,
   ali_026963,
   ali_031829,
   ali_00035384
@@ -63,6 +65,7 @@ export {
   ali_011166,
   ali_011256,
   ali_011807,
+  ali_011811,
   ali_026963,
   ali_031829,
   ali_00035384

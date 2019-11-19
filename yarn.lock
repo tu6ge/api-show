@@ -1578,12 +1578,13 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-api-show@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.npm.taobao.org/api-show/download/api-show-0.1.15.tgz#9b1320b376f733c7adaf4c49f4612275fa025b6c"
-  integrity sha1-mxMgs3b3M8etr0xJ9GEidfoCW2w=
+api-show@^0.1.15, api-show@^0.1.16:
+  version "0.1.16"
+  resolved "https://registry.npm.taobao.org/api-show/download/api-show-0.1.16.tgz#9aca2e72c615e4b15c91cc84e775cefd581a51b0"
+  integrity sha1-msoucsYV5LFckcyE53XO/VgaUbA=
   dependencies:
     ant-design-vue "^1.4.0"
+    api-show "^0.1.15"
     echarts "^4.4.0"
     element-ui "^2.12.0"
     sass "^1.23.1"
