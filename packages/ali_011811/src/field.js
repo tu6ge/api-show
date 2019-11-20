@@ -1,5 +1,5 @@
 export default {
-    zh:{
+    i18n:{
         "name": "名称",
         "initial": "首字母",
         "parentid": "上级ID",
