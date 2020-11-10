@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{1061:function(e,t,s){"use strict";var n={components:{ParentPage:s(1060).a},props:["sidebarItems"]},a=s(7),r=Object(a.a)(n,(function(){var e=this.$createElement;return(this._self._c||e)("ParentPage",{attrs:{sidebarItems:this.sidebarItems}})}),[],!1,null,null,null);t.a=r.exports}}]);
